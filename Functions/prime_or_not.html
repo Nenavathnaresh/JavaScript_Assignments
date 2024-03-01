@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function prime(a){
+            var fc = 0;
+            for(var i = 1; i <= a; i++){
+                if(a % i == 0){
+                    fc++
+                }
+            }
+            if(fc === 2){
+                return (`${a} is a prime`)
+            }
+            else{
+                return(`${a} is not a prime`)
+            }
+        }
+
+        var primeNum = prime(19);
+        console.log(primeNum)
+
+    </script>
+</body>
+</html>

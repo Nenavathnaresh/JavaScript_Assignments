@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+   
+    <h1 id="d1"></h1>
+    <h1 id="d2"></h1>
+    <img src="https://static1.industrybuying.com/products/office-supplies/office-furniture/office-chairs/OFF.OFF.72853554_1693459737364.webp"
+        width="100px" onclick="count(event)" id="img1">
+    <img src="https://static1.industrybuying.com/products/office-supplies/office-furniture/office-chairs/OFF.OFF.72853554_1693459737364.webp"
+        width="100px" onclick="count(event)">
+    <img src="https://static1.industrybuying.com/products/office-supplies/office-furniture/office-chairs/OFF.OFF.72853554_1693459737364.webp"
+        width="100px" onclick="count(event)">
+    <img src="https://static1.industrybuying.com/products/office-supplies/office-furniture/office-chairs/OFF.OFF.72853554_1693459737364.webp"
+        width="100px" onclick="count(event)">
+    <img src="https://static1.industrybuying.com/products/office-supplies/office-furniture/office-chairs/OFF.OFF.72853554_1693459737364.webp"
+        width="100px" onclick="count(event)">
+    <img src="https://static1.industrybuying.com/products/office-supplies/office-furniture/office-chairs/OFF.OFF.72853554_1693459737364.webp"
+        width="100px" onclick="count(event)">
+    <script>
+    
+       
+        var available = 6;
+        var non_vailable = 0;
+
+        var a = document.getElementById('d1');
+        var b = document.getElementById('d2')
+       
+        
+        function count(e) {
+            if(e.target.style.opacity === ''){
+                e.target.style.opacity = 0.5
+                available -= 1;
+                non_vailable += 1
+                
+            }
+            else{
+                e.target.style.opacity = '';
+                available += 1;
+                non_vailable -= 1
+                
+            }
+          a.innerHTML = `Occupied : ${available}`
+          b.innerHTML =  `Available : ${non_vailable}`
+            
+        }
+
+    </script>
+</body>
+
+</html>

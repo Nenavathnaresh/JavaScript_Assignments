@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body align="center">
+    <form action="" name="userForm" onsubmit="event.preventDefault()">
+        <h1>Add Conctact Cards</h1>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"> <br><br>
+        <label for="num">Number:</label>
+        <input type="number" name="num" id="num"> <br><br>
+        <label for="mail">Email:</label>
+        <input type="email" name="mail" id="mail"> <br><br>
+        <label for="">Enter image URL:</label>
+        <input type="text" name="img" id="img"> <br><br>
+
+        <!-- <input type="text" name="search" placeholder="search..." onkeyup="searchName()"> -->
+        <button onclick="sort()">sort</button>
+        <button onclick="add()" id="ad">Add Contact</button>
+        <button onclick="update()" id="updat">Update</button>
+    </form>
+    <input type="text" name="search" id="search" onkeyup="search(event)" placeholder="search...">
+    <div id="div"></div>
+    <script>
+
+
+
+        var arr = [];
+        var currindex;
+
+        var searchinp = document.getElementById('search')
+        var adbtn = document.getElementById('ad')
+        var updatebtn = document.getElementById('updat')
+        updatebtn.style.display = 'none'
+        searchinp.style.display = 'none'
+        function add() {
+
+            searchinp.style.display = 'block'
+
+            var obj = {
+                'image': '',
+                'Name': '',
+                'Number': '',
+                'Mail': ''
+            }
+            obj.image = userForm.img.value;
+            obj.Name = userForm.name.value;
+            obj.Number = userForm.num.value;
+            obj.Mail = userForm.mail.value;
+            arr.push(obj)
+
+            createcard(arr)
+
+        }
+        console.log(arr);
+
+        var mDiv = document.getElementById('div')
+        function createcard(students) {
+            mDiv.innerHTML = ''
+            students.forEach((a, index) => {
+                var div = document.createElement('div')
+                div.style.border = '5px dashed red'
+                div.style.borderRadius = '15px'
+                div.style.margin = '5px'
+                div.style.padding = '5px'
+                div.style.width = '30%'
+                div.style.backgroundColor = 'yellow'
+                mDiv.appendChild(div)
+
+                var btndiv = document.createElement('div');
+                btndiv.style.position = 'relative'
+                var delbtn = document.createElement('button');
+                delbtn.innerHTML = 'X';
+                delbtn.style.color = 'red'
+                delbtn.style.position = 'absolute';
+                delbtn.style.top = '10px';
+                delbtn.style.right = '10px';
+                delbtn.onclick = function () {
+                    window.confirm('Are you sure want to delete this contact')
+                    students.splice(index, 1)
+                    createcard(arr)
+                }
+                btndiv.appendChild(delbtn)
+                div.appendChild(btndiv)
+
+                var editdiv = document.createElement('div');
+                div.style.position = 'relative'
+                var editbtn = document.createElement('button');
+                editbtn.innerHTML = 'Edit';
+                editbtn.style.backgroundColor = 'blue'
+                editbtn.style.position = 'absolute';
+                editbtn.style.bottom = '10px';
+                editbtn.style.right = '10px';
+
+
+                editbtn.onclick = function () {
+                    adbtn.style.display = 'none';
+                    updatebtn.style.display = 'block'
+                    // document.getElementById('img').value = a['image']
+                    // document.getElementById('num').value = a['Number']
+                    // document.getElementById('name').value = a['Name']
+                    // document.getElementById('mail').value = a['Mail']
+
+                    userForm.name.value = a['Name']
+                    userForm.num.value = a['Number']
+                    userForm.mail.value = a['Mail']
+                    userForm.img.value = a['image']
+
+                    currindex = index;
+                }
+                editdiv.appendChild(editbtn)
+                div.appendChild(editdiv)
+
+
+
+                var div1 = document.createElement('div');
+                var img = document.createElement('img');
+                img.src = a.image
+                img.style.width = '80px';
+                img.style.height = '80px';
+                img.style.borderRadius = '50%';
+                div1.appendChild(img);
+                div.appendChild(div1)
+
+                var keys = Object.keys(a)
+                for (var i = 1; i < keys.length; i++) {
+                    var div2 = document.createElement('div');
+                    div.appendChild(div2)
+                    div2.innerHTML = keys[i] + ':' + a[keys[i]]
+                }
+
+            })
+            userForm.reset();
+        }
+
+        var order = 'ase';
+        function sort() {
+            if (order === 'ase') {
+                order = 'dse'
+                arr.sort(function (a, b) {
+                    if (a['Name'].toLowerCase() > b['Name'].toLowerCase()) {
+                        return 1
+                    }
+                    if (a['Name'].toLowerCase() < b['Name'].toLowerCase()) {
+                        return -1
+                    }
+                    return 0
+
+                })
+            }
+            else{
+                order = 'ase'
+                arr.sort(function (a, b) {
+                    if (a['Name'].toLowerCase() > b['Name'].toLowerCase()) {
+                        return -1
+                    }
+                    if (a['Name'].toLowerCase() < b['Name'].toLowerCase()) {
+                        return 1
+                    }
+                    return 0
+
+                })
+            }
+
+            createcard(arr)
+        }
+
+        function update() {
+            var ob1 = {}
+            ob1['image'] = userForm.img.value;
+            ob1['Name'] = userForm.name.value;
+            ob1['Number'] = userForm.num.value;
+            ob1['Mail'] = userForm.mail.value;
+            arr[currindex] = ob1
+            createcard(arr)
+            adbtn.style.display = 'block';
+            updatebtn.style.display = 'none'
+        }
+
+
+
+        function search(e) {
+            var filter = arr.filter((a) => {
+                return a['Name'].toLowerCase().includes((e.target.value.toLowerCase()))
+            })
+            createcard(filter)
+        }
+
+
+
+    </script>
+</body>
+
+</html>

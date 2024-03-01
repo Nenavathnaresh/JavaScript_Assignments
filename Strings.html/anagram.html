@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = 'naresh';
+        var sub = 'hseran';
+        var count = 0;
+        for(var i = 0; i < n.length; i++){
+            for(var j = 0; j < sub.length; j++ ){
+                if(sub[i] === n[j]){
+                    count += 1;
+                }
+            }
+        }
+        
+        if(count === n.length && n.length === sub.length){
+            console.log('Anagram')
+        }
+        else{
+            console.log('Not anagram')
+        }
+        
+    </script>
+</body>
+</html>

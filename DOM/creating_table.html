@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <script>
+        var people = [
+            {
+                "firstname": "praveen",
+                "lastname": "gubbala",
+                "age": 36,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 10000
+            },
+            {
+                "firstname": "srikanth",
+                "lastname": "gubbala",
+                "age": 32,
+                "gender": "male",
+                "city": "bengaluru",
+                "salary": 20000
+            },
+            {
+                "firstname": "pradeep",
+                "lastname": "reddy",
+                "age": 21,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 25000
+            },
+            {
+                "firstname": "mounika",
+                "lastname": "mudiraj",
+                "age": 20,
+                "gender": "female",
+                "city": "nalgonda",
+                "salary": 30000
+            },
+            {
+                "firstname": "nikhil",
+                "lastname": "m",
+                "age": 22,
+                "gender": "male",
+                "city": "guntur",
+                "salary": 2000
+            },
+            {
+                "firstname": "riya",
+                "lastname": "bhadouria",
+                "age": 14,
+                "gender": "female",
+                "city": "indore",
+                "salary": 40000
+            }
+        ];
+        var table = document.createElement('table');
+        table.setAttribute('border', '2')
+        var thead = document.createElement('tr');
+
+        var tr1 = document.createElement('th');
+        tr1.innerHTML = "Name"
+        var tr2 = document.createElement('th');
+        tr2.innerHTML = 'Age'
+        var tr3 = document.createElement('th');
+        tr3.innerHTML = "Gender"
+        var tr4 = document.createElement('th');
+        tr4.innerHTML = "City"
+        var tr5 = document.createElement('th');
+        tr5.innerHTML = 'Salary'
+
+        thead.appendChild(tr1)
+        thead.appendChild(tr2)
+        thead.appendChild(tr3)
+        thead.appendChild(tr4)
+        thead.appendChild(tr5)
+
+        table.appendChild(thead)
+
+        people.forEach(function (a) {
+            var tr = document.createElement('tr');
+
+            var tr1 = document.createElement('td');
+            tr1.innerHTML = a.firstname
+            var tr2 = document.createElement('td');
+            tr2.innerHTML = a.age
+            var tr3 = document.createElement('td');
+            tr3.innerHTML = a.gender
+            var tr4 = document.createElement('td');
+            tr4.innerHTML = a.city
+            var tr5 = document.createElement('td');
+            tr5.innerHTML = a.salary
+
+            tr.appendChild(tr1)
+            tr.appendChild(tr2)
+            tr.appendChild(tr3)
+            tr.appendChild(tr4)
+            tr.appendChild(tr5)
+
+            table.appendChild(tr)
+        })
+
+        var x = document.getElementById('d1')
+        x.appendChild(table)
+
+
+    </script>
+</body>
+
+</html>

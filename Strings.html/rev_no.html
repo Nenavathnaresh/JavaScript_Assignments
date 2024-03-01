@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 102030405;
+        var str = num.toString();
+        var rev = str.split('').reverse().join('');
+        console.log(rev)
+
+        
+        var n = ''
+        for(var i = 0; i < str.length; i++){
+            if(str[i] !== '0'){
+                n += str[i]
+            }
+        }
+        console.log(n);
+        console.log('');
+
+        var digit = str.length;
+        console.log(digit)
+        console.log('');
+
+        var s = 'Q1STR5684AK';
+        var numb = '';
+        for(var i = 0; i < s.length; i++){
+            if(s[i] >= 0 && s[i] <= 9){
+                numb += s[i];
+            }
+        }
+        console.log(numb)
+    </script>
+</body>
+</html>

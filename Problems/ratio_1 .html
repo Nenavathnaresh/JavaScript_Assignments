@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var large ;
+        var small ;
+        function ratio(n1,n2){
+            if(n1>n2){
+                large = n1 ;
+                small = n2 ;
+
+            }
+            else{
+                large = n2;
+                small = n1;
+            }
+            for(var i = 1; i <= small ; i++){
+                if(small % i === 0 && large % i === 0){
+                    var hcf = i;
+                }
+            }
+            var arr = [];
+            arr[0] = (n1 / hcf) ;
+            arr[1] = (n2 / hcf) ;
+            return arr
+        }
+        console.log(ratio(1920,1080))
+    </script>
+</body>
+</html>

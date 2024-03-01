@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkSum(a,b){
+            if(a <= 0 || b <= 0 || a == 10 || b == 10){
+                return false
+            }
+            else{
+                if(a+b === 10){
+                    return true
+                }
+                else{
+                    return false
+                }
+            }
+        }
+        console.log(checkSum(0,10))
+    </script>
+</body>
+</html>

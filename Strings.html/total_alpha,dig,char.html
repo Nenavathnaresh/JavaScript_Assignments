@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'nenavathnaresh460@gmail.com';
+        var alpha = 0;
+        var digit = 0;
+        var spl = 0;
+        for(var i = 0; i < str.length; i++){
+            if(str[i] >= 'A' && str[i] <= 'z'){
+                alpha += 1;
+            }
+            else if(str[i] >= 0 && str[i] <= 9){
+                digit += 1;
+
+            }
+            else{
+                spl += 1;
+            }
+        }
+
+        console.log(alpha);
+        console.log(digit);
+        console.log(spl);
+        console.log(str.length);
+    </script>
+</body>
+</html>

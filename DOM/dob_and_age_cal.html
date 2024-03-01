@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center">
+  <div>
+    <div> <input type="date" name="date" id="date" onchange="dateOfBirth()"></div>
+    <div> <h1 id="d1"></h1></div>
+  </div>
+    <script>
+        var date = document.getElementById('date')
+        var x = document.getElementById('d1')
+
+        var today = new Date().getTime() 
+        console.log(today);
+
+        function dateOfBirth() {
+           
+            var dob = new Date(date.value)
+            var bts = dob.getTime()
+            var age = (today - bts)/(1000*60*60*24*365)
+        
+            
+            var month;
+            var day;
+            if(parseInt(age)===0){
+                month = age * 12
+            }
+            else{
+                month = (age % parseInt(age))*12;
+            }
+            if(parseInt(month)===0){
+                day = month*30
+            }
+            else{
+                day = (month % parseInt(month))*30;
+            }
+
+            x.innerHTML = `Your age is ${parseInt(age)} years, ${parseInt(month)} months, ${parseInt(day)} days`
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="checkIn()">IN</button>
+    <button onclick="checkOut()">OUT</button>
+    <button onclick="total()">Total</button>
+    <h1 id="h1"></h1>
+    <h1>Time Log:</h1>
+    <ul id="ul">
+
+    </ul>
+    
+    <script>
+        var ul = document.getElementById('ul');
+        var h1 = document.getElementById('h1')
+
+        var sum = 0;
+        var intime;
+        var outtime;
+        
+        function checkIn(){
+            var inDate = new Date()
+            var its = inDate.getTime()
+            intime = its;
+
+            var li = document.createElement('li');
+            ul.appendChild(li)
+            li.innerHTML = inDate;
+       
+        }
+
+        function checkOut(){
+            var outDate = new Date()
+           
+            var ots = outDate.getTime()
+            outtime = ots;
+          
+            var li = document.createElement('li');
+            ul.appendChild(li)
+            li.innerHTML = outDate;
+
+            sum += outtime - intime
+            console.log(sum);
+        }
+
+        function total(){
+            h1.innerHTML = `Total time worked: ${sum}ms`
+        }
+
+       
+
+    </script>
+</body>
+</html>

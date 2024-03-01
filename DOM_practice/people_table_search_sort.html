@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tb {
+            background-image: url(https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-virtual-background-_Tcjok-d9b4.jpg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="ase()" style="margin-right: 40px;">A-Z</button>
+    <input type="text" onkeyup="search(event)" placeholder="search..." id="inp">
+    <button onclick="des()" style="margin-left: 40px;">Z-A</button>
+
+    <table border="1px solid">
+        <thead>
+            <tr>
+                <th>lastname</th>
+                <th>age</th>
+                <th>gender</th>
+                <th>city</th>
+                <th>salary</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+    </table>
+    <script>
+        var people = [
+            {
+                "firstname": "praveen",
+                "lastname": "gubbala",
+                "age": 36,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 10000
+            },
+            {
+                "firstname": "srikanth",
+                "lastname": "gubbala",
+                "age": 32,
+                "gender": "male",
+                "city": "bengaluru",
+                "salary": 20000
+            },
+            {
+                "firstname": "pradeep",
+                "lastname": "reddy",
+                "age": 21,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 25000
+            },
+            {
+                "firstname": "mounika",
+                "lastname": "mudiraj",
+                "age": 20,
+                "gender": "female",
+                "city": "nalgonda",
+                "salary": 30000
+            },
+            {
+                "firstname": "nikhil",
+                "lastname": "m",
+                "age": 22,
+                "gender": "male",
+                "city": "guntur",
+                "salary": 2000
+            },
+            {
+                "firstname": "riya",
+                "lastname": "bhadouria",
+                "age": 14,
+                "gender": "female",
+                "city": "indore",
+                "salary": 40000
+            }
+        ];
+
+        var table = document.getElementById('tb');
+        var input = document.getElementById('inp')
+
+        function createTable(arr) {
+            table.innerHTML = ''
+            arr.forEach(function (person) {
+                var tr = document.createElement('tr');
+                var td1 = document.createElement('td');
+                td1.innerHTML = person.firstname;
+                var td2 = document.createElement('td');
+                td2.innerHTML = person.lastname;
+                var td3 = document.createElement('td');
+                td3.innerHTML = person.age;
+                var td4 = document.createElement('td');
+                td4.innerHTML = person.gender;
+                var td5 = document.createElement('td');
+                td5.innerHTML = person.city;
+                var td6 = document.createElement('td');
+                td6.innerHTML = person.salary;
+
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tr.appendChild(td3)
+                tr.appendChild(td4)
+                tr.appendChild(td5)
+                tr.appendChild(td6)
+
+                table.appendChild(tr)
+
+            })
+        }
+        createTable(people)
+
+        function des() {
+            people.sort(function (a, b) {
+                if (a.firstname > b.firstname) {
+                    return -1
+                }
+                if (a.firstname < b.firstname) {
+                    return 1
+                }
+                return 0
+            })
+            createTable()
+        }
+
+        function ase() {
+            people.sort(function (a, b) {
+                if (a.firstname > b.firstname) {
+                    return 1
+                }
+                if (a.firstname < b.firstname) {
+                    return -1
+                }
+                return 0
+            })
+            createTable()
+        }
+
+        function search(){
+            var filterNames = people.filter(function(person){
+                return (person.firstname.startsWith(input.value))
+            })
+            createTable(filterNames)
+        }
+    </script>
+</body>
+
+</html>

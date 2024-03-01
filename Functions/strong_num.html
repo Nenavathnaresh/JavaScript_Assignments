@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var fact = 1;
+        var sum = 0;
+       function strong(n){
+        var strNum = n.toString();
+        var len = strNum.length;
+        for(var i = 0 ; i < len; i++){
+            var digit = parseInt(strNum[i])
+            for(var j = 1 ; j <= digit; j++){
+                fact *= j
+            }
+            sum += fact ;
+            fact = 1
+        }
+        if(sum === n){
+            console.log(n)
+        }
+        sum = 0;
+        }
+       for(var n = 1; n <= 200000; n++){
+        var m = strong(n);
+       }
+       
+       
+    </script>
+</body>
+
+</html>

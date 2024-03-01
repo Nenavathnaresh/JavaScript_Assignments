@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = prompt();
+        var count = 0;
+        var maxCount = 0;
+        for(var i = 0; i < str.length; i++){
+            for(j = i; j < str.length; j++){
+                if(str[i] === str[j]){
+                    count += 1;
+                }
+                if(maxCount < count){
+                    maxCount=count;
+                    var a = i
+                }
+            }
+            count = 0;
+        }
+        console.log(str[a],maxCount)
+
+        // OR //
+
+        var a = 'banana';
+        var max = 0;
+        for(var i = 0; i < a.length; i++){
+            var k = a.split(a[i]).length-1;
+            if(max < k){
+            max = k;
+            var index = i;
+        }
+        }
+        console.log(max,a[index])
+    </script>
+</body>
+</html>

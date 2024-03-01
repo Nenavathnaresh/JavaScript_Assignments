@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="d1">Hello World</h1>
+    <h1 class="a">Hello</h1>
+    <h2 class="a">Edupoly</h2>
+    <p class="b">training</p>
+
+    <ul>
+        <li class="l">Apple</li>
+        <li class="l">Mango</li>
+        <li class="l">Orange</li>
+    </ul>
+
+    <h1>Hello</h1>
+    <p>Edupoly</p>
+    <p>Training</p>
+    <p>Something</p>
+
+    <script>
+   var eleh1 = document.getElementById('d1')
+   var x = eleh1.textContent ;
+   console.log(x)
+   console.log(eleh1.innerHTML)
+   console.log(typeof x)
+   console.log(x.toUpperCase())
+   console.log(eleh1.innerHTML = 'Welcome to Edupoly')
+   console.log('')
+
+
+// Print the texts inside the h1 and h2 elements in the console.
+
+var x = document.querySelector('h1.a')
+var t = document.querySelector('h2.a')
+console.log(x.textContent)
+console.log(t.textContent)
+
+var x = document.getElementsByClassName('a') 
+for(var i = 0; i < x.length; i++){
+    console.log(x[i].innerHTML)
+}
+
+console.log(x[0].innerHTML)
+console.log(x[1].innerHTML)
+
+// Store the texts of each li element in an array.
+
+var ar = [];
+var liElements = document.querySelectorAll('ul li');
+liElements.forEach(function(li){
+    //ar.push(li.textContent);
+
+})
+//console.log(ar);
+
+var list = document.getElementsByTagName('li');
+for(var i = 0; i < list.length; i++){
+    ar.push(list[i].innerHTML)
+}
+console.log(ar)
+
+console.log('')
+
+//Print the text inside the first paragraph element in the console.
+
+var pele = document.getElementsByTagName('p');
+console.log(pele[0].textContent)
+console.log(pele[0].innerHTML)
+
+    </script>
+</body>
+</html>

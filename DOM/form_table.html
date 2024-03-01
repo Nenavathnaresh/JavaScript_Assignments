@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="event.preventDefault()" name="userForm">
+
+        <label>FirstName:</label>
+        <input type="text" name="firstname" minlength="3" required placeholder="FirstName"> <br><br>
+        <label>LastName:</label>
+        <input type="text" name="lastname" required placeholder="LastName"><br><br>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="others">Others <br><br>
+        <label>Languages:</label>
+        <input type="checkbox" name="languages" value="english">English
+        <input type="checkbox" name="languages" value="hindi">Hindi
+        <input type="checkbox" name="languages" value="telugu">Telugu <br><br>
+
+        <button onclick="save()">Save</button>
+
+    </form>
+    <br><br>
+    <table id="tab" border="1px solid"></table>
+    <script>
+        var people = [];
+
+        function save() {
+            person = {
+                'firstName': '',
+                'lastName': '',
+                'Gender': '',
+                'Language': []
+            }
+            person.firstName = userForm.firstname.value;
+            person.lastName = userForm.lastname.value;
+            person.Gender = userForm.gender.value;
+            userForm.languages.forEach(function (lang) {
+                if (lang.checked === true) {
+                    person.Language.push(lang.value)
+                }
+            })
+            people.push(person)
+            console.log(people)
+            var table = document.getElementById('tab');
+
+            table.innerHTML = ''
+            var thead = document.createElement('tr');
+            var td1 = document.createElement('th');
+            td1.innerHTML = 'FirstName';
+            var td2 = document.createElement('th');
+            td2.innerHTML = 'LastName';
+            var td3 = document.createElement('th');
+            td3.innerHTML = 'Gender';
+            var td4 = document.createElement('th');
+            td4.innerHTML = 'Language';
+
+            thead.appendChild(td1);
+            thead.appendChild(td2);
+            thead.appendChild(td3);
+            thead.appendChild(td4);
+
+            table.appendChild(thead);
+
+
+            people.forEach(function (person) {
+
+                var thead = document.createElement('tr');
+                var td1 = document.createElement('td');
+                td1.innerHTML = person.firstName;
+                var td2 = document.createElement('td');
+                td2.innerHTML = person.lastName;
+                var td3 = document.createElement('td');
+                td3.innerHTML = person.Gender;
+                var td4 = document.createElement('td');
+                td4.innerHTML = person.Language;
+
+                thead.appendChild(td1);
+                thead.appendChild(td2);
+                thead.appendChild(td3);
+                thead.appendChild(td4);
+
+                table.appendChild(thead);
+            })
+        }
+    </script>
+</body>
+
+</html>

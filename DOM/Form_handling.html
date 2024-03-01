@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="event.preventDefault()" name="userform">
+        <label for="">firstname</label>
+        <input type="text" id="fn" name="fn"> <br><br>
+        <label for="">firstname</label>
+        <input type="text" id="ln" name="ln"> <br><br>
+        <label for="">DOB</label>
+        <input type="date" id="dob" name="dob"> <br><br>
+        <label for="">Gender :</label>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="others">Others <br><br>
+        <label for="">languages</label>
+        <input type="checkbox" name="languages" value="English">English
+        <input type="checkbox" name="languages" value="Hindi">Hindi
+        <input type="checkbox" name="languages" value="Telugu">Telugu <br><br>
+        <label for="">Select the course</label>
+        <select name="course" id="">
+            <option value="ReactJs">ReactJs</option>
+            <option value="Angular">Angular</option>
+        </select> <br><br>
+        <label for="">Address</label>
+        <textarea name="address" id="" cols="30" rows="10"></textarea>
+        <button onclick="print()">print</button>
+
+        <div id="d1"></div>
+    </form>
+
+    <script>
+        // var fn = document.getElementById('fn');
+        // var ln = document.getElementById('ln');
+        // var dob = document.getElementById('dob');
+
+        people = [];
+
+        var userform = document.userform;
+
+        var mainDiv = document.getElementById('d1')
+        var table = document.createElement('table');
+        table.setAttribute('border', '2')
+
+
+        function print() {
+            var obj = {
+                'firstname': '',
+                'lastname': '',
+                'dob': '',
+                'gender': '',
+                'languages': [],
+                'course': '',
+                'address': ''
+            };
+            obj.firstname = userform.fn.value;
+            obj.lastname = userform.ln.value;
+            obj.dob = userform.dob.value;
+            obj.gender = userform.gender.value;
+            userform.languages.forEach(function (languages) {
+                if (languages.checked === true) {
+                    obj.languages.push(languages.value)
+                }
+            })
+            obj.course = userform.course.value;
+            obj.address = userform.address.value
+            //console.log(obj) 
+
+            people.push(obj)
+            console.log(people);
+            userform.reset()
+            createTable(people)
+
+            //    console.log(document.userform.fn.value)
+            //    console.log(document.userform.ln.value)
+            //    console.log(document.userform.dob.value)
+            //    console.log(document.userform.gender.value)
+        }
+
+
+        function createTable(array) {
+            table.innerHTML = ''
+            var thead = document.createElement('tr');
+
+            var tr1 = document.createElement('th');
+            tr1.innerHTML = "Firstname"
+            var tr2 = document.createElement('th');
+            tr2.innerHTML = 'Lastname'
+            var tr3 = document.createElement('th');
+            tr3.innerHTML = "DOB"
+            var tr4 = document.createElement('th');
+            tr4.innerHTML = "Gender"
+            var tr5 = document.createElement('th');
+            tr5.innerHTML = 'Languages'
+            var tr6 = document.createElement('th');
+            tr6.innerHTML = 'Course'
+            var tr7 = document.createElement('th');
+            tr7.innerHTML = 'City'
+
+            thead.appendChild(tr1)
+            thead.appendChild(tr2)
+            thead.appendChild(tr3)
+            thead.appendChild(tr4)
+            thead.appendChild(tr5)
+            thead.appendChild(tr6)
+            thead.appendChild(tr7)
+
+            table.appendChild(thead)
+
+            people.forEach(function (a) {
+                var tr = document.createElement('tr');
+
+                var tr1 = document.createElement('td');
+                tr1.innerHTML = a.firstname
+                var tr2 = document.createElement('td');
+                tr2.innerHTML = a.lastname
+                var tr3 = document.createElement('td');
+                tr3.innerHTML = a.dob
+                var tr4 = document.createElement('td');
+                tr4.innerHTML = a.gender
+                var tr5 = document.createElement('td');
+                tr5.innerHTML = a.languages
+                var tr6 = document.createElement('td');
+                tr6.innerHTML = a.course
+                var tr7 = document.createElement('td');
+                tr7.innerHTML = a.address
+
+                tr.appendChild(tr1)
+                tr.appendChild(tr2)
+                tr.appendChild(tr3)
+                tr.appendChild(tr4)
+                tr.appendChild(tr5)
+                tr.appendChild(tr6)
+                tr.appendChild(tr7)
+
+                table.appendChild(tr)
+            })
+
+
+            mainDiv.appendChild(table)
+        }
+    </script>
+</body>
+</html>

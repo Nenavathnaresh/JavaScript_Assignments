@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = prompt();
+        var text = ''
+        for(var i = 0; i < str.length; i++){
+            var len = str.split(str[i]).length-1;
+            if(len === 1){
+                text += str[i];
+            }
+        }
+        console.log(text)
+        
+    </script>
+</body>
+</html>

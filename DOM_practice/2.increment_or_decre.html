@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="decrement()">Decrement</button>
+    <input type="text" id="d1">
+    <button onclick="increment()">Increment</button>
+    <script>
+        var text = document.getElementById('d1');
+        var i = 0;
+        text.value = i;
+        function decrement(){
+            text.value = --i
+        }
+        function increment(){
+            text.value = ++i
+        }
+    </script>
+</body>
+</html>

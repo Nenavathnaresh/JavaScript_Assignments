@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="d1"></h1>
+    <button onclick="xyz()">Previous</button>
+    <button onclick="abc()">Next</button>
+  <script>
+    var i = 0;
+   var students = ['naresh', 'suresh','ramesh','tharun','siddu']
+   var x = document.getElementById('d1');
+   x.innerHTML = students[i]
+   
+   function abc(){
+       i++
+       if(i === students.length){
+        i = 0 ;
+       }
+        x.innerHTML = students[i]
+    
+    }
+    function xyz(){
+        i--
+        if(i === -1){
+            i = students.length-1
+        }
+        x.innerHTML = students[i]
+    }
+    
+   
+  </script>
+</body>
+</html>

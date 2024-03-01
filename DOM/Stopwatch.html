@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1><span id="min"></span>:
+    <span id="sec"></span>:
+    <span id="msec"></span></h1>
+    <br><br>
+
+    <button id="str" onclick="start()">Start</button>
+    <button id="pse" onclick="pause()">Pause</button>
+    <button onclick="stop()">Reset</button>
+    <script>
+
+        var pau = document.getElementById('pse');
+        var str = document.getElementById('str');
+        pau.style.display = 'none'
+
+        var date = new Date();
+        console.log(date.getSeconds());
+        var setInt;
+        var i = 0;
+        var j = 0;
+        var k = 0;
+        var min = document.getElementById('min')
+        min.innerHTML = k
+        var sec = document.getElementById('sec')
+        sec.innerHTML = i 
+        var msec = document.getElementById('msec')
+        msec.innerHTML = j
+       
+        function start(){
+            pau.style.display = 'inline'
+            str.style.display = 'none'
+
+          setInt = setInterval(()=>{ 
+            msec.innerHTML = ++i
+            if(i === 99){
+                i = 0;
+                msec.innerHTML = i;
+                sec.innerHTML = ++j
+                
+            }
+            if(j ===59){
+                j = 0;
+                sec.innerHTML = j
+                min.innerHTML = ++k
+            
+            }
+          },0)   
+        }
+
+        function pause(){
+            clearInterval(setInt)
+            str.style.display = 'none'
+        }
+
+        function stop(){
+            str.style.display = 'inline'
+            pau.style.display = 'none'
+            msec.innerHTML = 0;
+            sec.innerHTML = 0;
+            min.innerHTML = 0
+           i = 0;
+           j = 0;
+           k = 0;
+        }
+
+        var today = new Date()
+        var day = Date.now()
+        
+        console.log(day);
+
+    </script>
+</body>
+
+</html>

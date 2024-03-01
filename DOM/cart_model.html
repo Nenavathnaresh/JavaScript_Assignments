@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dd {
+            border: 5px dashed red;
+            border-radius: 10px;
+            background-color: aqua;
+            margin: 10px;
+            padding: 10px;
+            justify-content: space-evenly;
+            display: inline-block;
+            width: 42%;
+        }
+        #mainDiv{
+            border: 5px dashed blue;
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            display: inline-block;
+        }
+        button{
+            background-color: green;
+            color: white;
+            margin: 5px;
+        }
+        #cDiv{
+            border: 5px dashed blue;
+            padding: 10px;
+            width: 43%;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainDiv"></div>
+    <div id="cDiv">
+        
+    </div>
+    
+    
+    <script>
+        var products = [
+            {
+                "Name": "Duracell - AAA Batteries (4-Pack)",
+                "Type": "HardGood",
+                "Price": 5.49,
+                "Category": "Household Batteries",
+                "Manufacturer": "Duracell",
+            },
+            {
+                "Name": "Hard Rock TrackPak - Mac",
+                "Type": "Software",
+                "Price": 29.99,
+                "Category": "Recording Equipment",
+                "Manufacturer": "Hal Leonard",
+            },
+            {
+                "Name": "Duracell - AA 1.5V CopperTop Batteries (4-Pack)",
+                "Type": "HardGood",
+                "Price": 5.62,
+                "Category": "Household Batteries",
+                "Manufacturer": "Duracell",
+            },
+            {
+                "Name": "Energizer - MAX Batteries AA (4-Pack)",
+                "Type": "HardGood",
+                "Price": 5.32,
+                "Category": "Household Batteries",
+                "Manufacturer": "Energizer",
+            },
+            {
+                "Name": "METRA - Antenna Cable Adapter - Black",
+                "Type": "HardGood",
+                "Price": 13.99,
+                "Category": "Antennas & Adapters",
+                "Manufacturer": "Metra",
+            },
+            {
+                "Name": "WipeDrive Six - Mac|Windows",
+                "Type": "Software",
+                "Price": 23.99,
+                "Category": "Maintenance Software",
+                "Manufacturer": "White Canyon",
+            }
+        ];
+
+        var cartArr = []
+
+        var mainDiv = document.getElementById('mainDiv')
+        function genUI(productItems) {
+            
+            productItems.forEach(function (a, b) {
+                var div = document.createElement('div');
+                div.setAttribute('id', 'dd')
+                mainDiv.appendChild(div)
+
+                Object.keys(a).forEach(function (c, d) {
+                    var div1 = document.createElement('div');
+                    div.appendChild(div1)
+                    div1.innerHTML = c + ':' + a[c]
+                })
+
+                var btn = document.createElement('button');
+                btn.innerHTML = 'Add to cart'
+                div.appendChild(btn)
+                btn.onclick = function () {
+                    var x = JSON.parse(JSON.stringify(a))
+                    x['count'] = 1
+                    cartArr.push(x)
+                    //console.log(cartArr);
+                    addCart()
+                }
+
+            })
+
+           
+        }
+        genUI(products)
+
+
+        var cDiv = document.getElementById('cDiv')
+        function addCart(){
+            cDiv.innerHTML = '';
+            cartArr.forEach(function(a,b){
+                var namediv = document.createElement('div');
+                namediv.style.backgroundColor ='lightpink'
+                namediv.style.border ='1px solid'
+                namediv.style.margin ='5px'
+                namediv.style.padding ='5px'
+                namediv.innerHTML = a['Name'] 
+                cDiv.appendChild(namediv)
+
+                var pricediv = document.createElement('span');
+                pricediv.innerHTML = a['Price']
+                pricediv.style.border ='2px solid'
+                pricediv.style.margin ='5px'
+                pricediv.style.padding ='5px'
+                pricediv.style.backgroundColor = 'yellow'
+                cDiv.appendChild(pricediv)
+
+                var btn1 = document.createElement('button');
+                btn1.innerHTML = '-';
+                btn1.style.marginLeft = '55%'
+                btn1.onclick = function(){
+                    cartArr[b].count--;
+                    addCart()
+                }
+                cDiv.appendChild(btn1)
+
+                var input = document.createElement('input');
+                input.value = a['count']
+                input.style.textAlign = 'center';
+                input.style.width = '50px'
+                cDiv.appendChild(input)
+
+                var btn2 = document.createElement('button');
+                btn2.innerHTML = '+';
+                btn2.onclick = function(){
+                    cartArr[b].count++;
+                    addCart()
+                }
+                cDiv.appendChild(btn2);
+
+                var rbtn = document.createElement('button');
+                rbtn.innerHTML = 'Remove';
+                rbtn.onclick = function(){
+                    cartArr.splice(b,1)
+                    addCart()
+                }
+                cDiv.appendChild(rbtn)
+            })
+            var span = document.createElement('h3');
+            span.setAttribute('id','total')
+            span.style.border = '3px dashed'
+            span.style.backgroundColor = 'yellow'
+            span.style.margin = '5px';
+            span.style.padding = '5px';
+
+            cDiv.appendChild(span)
+            totalSum()
+        }
+        addCart()
+
+        
+        function totalSum(){
+            var total = document.getElementById('total')
+           var x = cartArr.reduce(function(a,b){
+            return a + (b['Price'] * b['count'])
+            },0);
+            total.innerHTML = " total:"+x;
+            
+            
+        }
+
+        if(cDiv.innerHTML === ''){
+            cDiv.innerHTML = `<h1> Oops! No Items...</h1>`
+        }
+        
+    </script>
+</body>
+
+</html>

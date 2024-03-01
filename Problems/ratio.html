@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ratio(a,b){
+            var deno = b[0] + b[1]
+            var arr = []
+            //arr[0] = ((b[0]/deno) * a) ;
+            //arr[1] = ((b[1]/deno) * a) ;
+            arr.push((b[0]/deno) * a) ;
+            arr.push((b[1]/deno) * a) ;
+            return arr
+        }
+        console.log(ratio(100,[2,3]));
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1 {
+            background-color: red;
+        }
+        #d2 {
+            background-color: blue;
+        }
+        #d3 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button onclick="abc(event)" id="d1" class="a" style="background-color: red;">here</button>
+    <button onclick="abc(event)" id="d2" class="a" style="background-color: blue;">here</button>
+    <button onclick="abc(event)" id="d3" class="a" style="background-color: green;">here</button> <br><br>
+
+    Firstname:<input type="text" id="c1" onkeyup="abc(event)"> <br><br>
+    Age:<input type="text" id="c2" onkeyup="def(event)"> <br><br>
+    City:<input type="text" id="c3" onkeyup="ghi(event)"> <br><br>
+   <button onclick="jkl(event)">Print</button>
+
+   <script>
+    var x;
+    var y;
+    var z;
+
+    var person = {
+       
+    }
+    
+
+   function abc(a){
+        person.firstName = a.target.value
+    }
+
+    function def(b){
+        person.age = +(b.target.value)
+    }
+
+    function ghi(c){
+         person.city = c.target.value
+    }
+
+    function jkl(){
+        console.log(person);
+    }
+
+
+
+    // using getElementBy Id method : 
+
+  
+   
+    
+   </script>
+   Firstname:<input type="text" id="b1" > <br><br>
+   Age:<input type="text" id="b2" > <br><br>
+   City:<input type="text" id="b3"> <br><br>
+  <button onclick="jkl()">Print</button>
+
+  <script>
+    var obj = {
+
+    }
+
+    function jkl(){
+        obj.firstName = document.getElementById('b1').value ;
+        obj.age = document.getElementById('b2').value ;
+        obj.city = document.getElementById('b3').value ;
+        console.log(obj)
+    }
+  </script>
+   
+
+</body>
+
+</html>

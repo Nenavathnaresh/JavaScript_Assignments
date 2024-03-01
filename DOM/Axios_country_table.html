@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <button onclick="ascorder()" style="margin-right: 50px;">A-Z</button>
+    <button onclick="dscorder()" style="margin-right: 50px;">Z-A</button>
+
+    <input type="text" id="textBox" onkeyup="search()" placeholder="search..."> <br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Country Name</th>
+                <th>Capital</th>
+                <th>Region</th>
+                <th>Subregion</th>
+                <th>population</th>
+                <th>Flag</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+    </table>
+
+    <script>
+        var table = document.getElementById('tb');
+        var textBox = document.getElementById('textBox') ;
+
+        var countries = [];
+        axios.get('https://restcountries.com/v3.1/all').then(function(responce){
+            countries = responce.data ;
+            createTable(countries);
+            console.log(responce.data[0]);
+        });
+
+        function ascorder(){   
+           countries.sort(function(a,b){
+               var fn1 = a.name.common.toLowerCase();
+               var fn2 = b.name.common.toLowerCase();
+               if(fn1 > fn2){
+                   return 1
+               }
+               else{
+                   return -1
+               } 
+           })
+           createTable(countries)
+          }
+
+          function dscorder(){  
+            countries.sort(function(a,b){
+                var fn1 = a.name.common.toLowerCase();
+                var fn2 = b.name.common.toLowerCase();
+                if(fn1 > fn2){
+                    return -1
+                }
+                else{
+                    return 1
+                } 
+            })
+            createTable(countries)
+           }
+
+           function search(){
+            var filtercountries = countries.filter(function(country){
+                return (country.name.common.toLowerCase().startsWith(textBox.value.toLowerCase()))
+            })
+            createTable(filtercountries);
+        }
+
+        function createTable(arr){
+        table.innerHTML = ''
+        arr.forEach(function(country){
+        var tr = document.createElement('tr');
+        var td1 = document.createElement('td');
+        td1.innerHTML = country.name.common ;
+        var td2 = document.createElement('td');
+        td2.innerHTML = country.capital ;
+        var td3 = document.createElement('td');
+        td3.innerHTML = country.region ;
+        var td4 = document.createElement('td');
+        td4.innerHTML = country.subregion ;
+        var td5 = document.createElement('td');
+        td5.innerHTML = country.population ;
+        var td6 = document.createElement('td');
+        var flagimg = document.createElement('img');
+        flagimg.style.width = '100px'
+        flagimg.src = country.flags.png;
+        td6.appendChild(flagimg)
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tr.appendChild(td5);
+        tr.appendChild(td6);
+
+        table.appendChild(tr)
+    
+       })
+      }
+    </script>
+</body>
+</html>

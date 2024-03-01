@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var people = [
+            {
+                "firstname": "praveen",
+                "lastname": "gubbala",
+                "age": 36,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 10000
+            },
+            {
+                "firstname": "srikanth",
+                "lastname": "gubbala",
+                "age": 32,
+                "gender": "male",
+                "city": "bengaluru",
+                "salary": 20000
+            },
+            {
+                "firstname": "pradeep",
+                "lastname": "reddy",
+                "age": 21,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 25000
+            },
+            {
+                "firstname": "mounika",
+                "lastname": "mudiraj",
+                "age": 20,
+                "gender": "female",
+                "city": "nalgonda",
+                "salary": 30000
+            },
+            {
+                "firstname": "nikhil",
+                "lastname": "m",
+                "age": 22,
+                "gender": "male",
+                "city": "guntur",
+                "salary": 2000
+            },
+            {
+                "firstname": "riya",
+                "lastname": "bhadouria",
+                "age": 14,
+                "gender": "female",
+                "city": "indore",
+                "salary": 40000
+            }
+        ];
+
+        var table = document.createElement('table')
+        table.setAttribute('border', 1)
+        var thead = document.createElement('tr')
+
+        var td1 = document.createElement('th');
+        td1.innerHTML = 'Firstname'
+        var td2 = document.createElement('th');
+        td2.innerHTML = 'Lastname'
+        var td3 = document.createElement('th');
+        td3.innerHTML = 'age'
+        var td4 = document.createElement('th');
+        td4.innerHTML = 'Gender'
+        var td5 = document.createElement('th');
+        td5.innerHTML = 'City'
+        var td6 = document.createElement('th');
+        td6.innerHTML = 'Salary'
+
+        thead.appendChild(td1)
+        thead.appendChild(td2)
+        thead.appendChild(td3)
+        thead.appendChild(td4)
+        thead.appendChild(td5)
+        thead.appendChild(td6)
+
+        table.appendChild(thead)
+        document.body.appendChild(table)
+
+        people.forEach(function (a) {
+            var thead = document.createElement('tr')
+
+            var td1 = document.createElement('td');
+            td1.innerHTML = a.firstname
+            var td2 = document.createElement('td');
+            td2.innerHTML = a.lastname
+            var td3 = document.createElement('td');
+            td3.innerHTML = a.age
+            var td4 = document.createElement('td');
+            td4.innerHTML = a.gender
+            var td5 = document.createElement('td');
+            td5.innerHTML = a.city
+            var td6 = document.createElement('td');
+            td6.innerHTML = a.salary
+
+            thead.appendChild(td1)
+            thead.appendChild(td2)
+            thead.appendChild(td3)
+            thead.appendChild(td4)
+            thead.appendChild(td5)
+            thead.appendChild(td6)
+
+            table.appendChild(thead)
+            
+        })
+
+       // Display all male and female people in two separate tables.
+
+       // Male table
+
+       
+        var table = document.createElement('table')
+        table.setAttribute('border', 1)
+        var thead = document.createElement('tr')
+
+        var td1 = document.createElement('th');
+        td1.innerHTML = 'Firstname'
+        var td2 = document.createElement('th');
+        td2.innerHTML = 'Lastname'
+        var td3 = document.createElement('th');
+        td3.innerHTML = 'age'
+        var td4 = document.createElement('th');
+        td4.innerHTML = 'Gender'
+        var td5 = document.createElement('th');
+        td5.innerHTML = 'City'
+        var td6 = document.createElement('th');
+        td6.innerHTML = 'Salary'
+
+        thead.appendChild(td1)
+        thead.appendChild(td2)
+        thead.appendChild(td3)
+        thead.appendChild(td4)
+        thead.appendChild(td5)
+        thead.appendChild(td6)
+
+        table.appendChild(thead)
+        document.body.appendChild(table)
+
+        people.forEach(function (a) {
+            if(a.gender === 'male'){
+            var thead = document.createElement('tr')
+
+            var td1 = document.createElement('td');
+            td1.innerHTML = a.firstname
+            var td2 = document.createElement('td');
+            td2.innerHTML = a.lastname
+            var td3 = document.createElement('td');
+            td3.innerHTML = a.age
+            var td4 = document.createElement('td');
+            td4.innerHTML = a.gender
+            var td5 = document.createElement('td');
+            td5.innerHTML = a.city
+            var td6 = document.createElement('td');
+            td6.innerHTML = a.salary
+
+            thead.appendChild(td1)
+            thead.appendChild(td2)
+            thead.appendChild(td3)
+            thead.appendChild(td4)
+            thead.appendChild(td5)
+            thead.appendChild(td6)
+
+            table.appendChild(thead)
+            } 
+        })
+
+        // female table 
+    
+        var table = document.createElement('table')
+        table.setAttribute('border', 1)
+        var thead = document.createElement('tr')
+
+        var td1 = document.createElement('th');
+        td1.innerHTML = 'Firstname'
+        var td2 = document.createElement('th');
+        td2.innerHTML = 'Lastname'
+        var td3 = document.createElement('th');
+        td3.innerHTML = 'age'
+        var td4 = document.createElement('th');
+        td4.innerHTML = 'Gender'
+        var td5 = document.createElement('th');
+        td5.innerHTML = 'City'
+        var td6 = document.createElement('th');
+        td6.innerHTML = 'Salary'
+
+        thead.appendChild(td1)
+        thead.appendChild(td2)
+        thead.appendChild(td3)
+        thead.appendChild(td4)
+        thead.appendChild(td5)
+        thead.appendChild(td6)
+
+        table.appendChild(thead)
+        document.body.appendChild(table)
+
+        people.forEach(function (a) {
+            if(a.gender === 'female'){
+            var thead = document.createElement('tr')
+
+            var td1 = document.createElement('td');
+            td1.innerHTML = a.firstname
+            var td2 = document.createElement('td');
+            td2.innerHTML = a.lastname
+            var td3 = document.createElement('td');
+            td3.innerHTML = a.age
+            var td4 = document.createElement('td');
+            td4.innerHTML = a.gender
+            var td5 = document.createElement('td');
+            td5.innerHTML = a.city
+            var td6 = document.createElement('td');
+            td6.innerHTML = a.salary
+
+            thead.appendChild(td1)
+            thead.appendChild(td2)
+            thead.appendChild(td3)
+            thead.appendChild(td4)
+            thead.appendChild(td5)
+            thead.appendChild(td6)
+
+            table.appendChild(thead)
+            } 
+        })
+
+       // Display only those people in a table who are having salaries more than 20000.
+
+       var table = document.createElement('table')
+        table.setAttribute('border', 1)
+        var thead = document.createElement('tr')
+
+        var td1 = document.createElement('th');
+        td1.innerHTML = 'Firstname'
+        var td2 = document.createElement('th');
+        td2.innerHTML = 'Lastname'
+        var td3 = document.createElement('th');
+        td3.innerHTML = 'age'
+        var td4 = document.createElement('th');
+        td4.innerHTML = 'Gender'
+        var td5 = document.createElement('th');
+        td5.innerHTML = 'City'
+        var td6 = document.createElement('th');
+        td6.innerHTML = 'Salary'
+
+        thead.appendChild(td1)
+        thead.appendChild(td2)
+        thead.appendChild(td3)
+        thead.appendChild(td4)
+        thead.appendChild(td5)
+        thead.appendChild(td6)
+
+        table.appendChild(thead)
+        document.body.appendChild(table)
+
+        people.forEach(function (a) {
+            if(a.salary > 20000){
+            var thead = document.createElement('tr')
+
+            var td1 = document.createElement('td');
+            td1.innerHTML = a.firstname
+            var td2 = document.createElement('td');
+            td2.innerHTML = a.lastname
+            var td3 = document.createElement('td');
+            td3.innerHTML = a.age
+            var td4 = document.createElement('td');
+            td4.innerHTML = a.gender
+            var td5 = document.createElement('td');
+            td5.innerHTML = a.city
+            var td6 = document.createElement('td');
+            td6.innerHTML = a.salary
+
+            thead.appendChild(td1)
+            thead.appendChild(td2)
+            thead.appendChild(td3)
+            thead.appendChild(td4)
+            thead.appendChild(td5)
+            thead.appendChild(td6)
+
+            table.appendChild(thead)
+            } 
+        })
+
+       // Display only the male people who are above the age of 25.
+
+       var table = document.createElement('table')
+        table.setAttribute('border', 1)
+        var thead = document.createElement('tr')
+
+        var td1 = document.createElement('th');
+        td1.innerHTML = 'Firstname'
+        var td2 = document.createElement('th');
+        td2.innerHTML = 'Lastname'
+        var td3 = document.createElement('th');
+        td3.innerHTML = 'age'
+        var td4 = document.createElement('th');
+        td4.innerHTML = 'Gender'
+        var td5 = document.createElement('th');
+        td5.innerHTML = 'City'
+        var td6 = document.createElement('th');
+        td6.innerHTML = 'Salary'
+
+        thead.appendChild(td1)
+        thead.appendChild(td2)
+        thead.appendChild(td3)
+        thead.appendChild(td4)
+        thead.appendChild(td5)
+        thead.appendChild(td6)
+
+        table.appendChild(thead)
+        document.body.appendChild(table)
+
+        people.forEach(function (a) {
+            if(a.gender === 'male' && a.age > 25){
+            var thead = document.createElement('tr')
+
+            var td1 = document.createElement('td');
+            td1.innerHTML = a.firstname
+            var td2 = document.createElement('td');
+            td2.innerHTML = a.lastname
+            var td3 = document.createElement('td');
+            td3.innerHTML = a.age
+            var td4 = document.createElement('td');
+            td4.innerHTML = a.gender
+            var td5 = document.createElement('td');
+            td5.innerHTML = a.city
+            var td6 = document.createElement('td');
+            td6.innerHTML = a.salary
+
+            thead.appendChild(td1)
+            thead.appendChild(td2)
+            thead.appendChild(td3)
+            thead.appendChild(td4)
+            thead.appendChild(td5)
+            thead.appendChild(td6)
+
+            table.appendChild(thead)
+            } 
+        })
+    </script>
+</body>
+
+</html>

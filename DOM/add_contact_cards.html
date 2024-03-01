@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #di {
+            display: flex;
+        }
+        #d2{
+            background-color: yellow;
+            margin: 10px;
+            padding: 10px;
+            border: 5px dashed blue;
+            border-radius: 10px;
+        }
+        form{
+            color: red;
+        }
+        button{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body align="center">
+    <form action="" name="userForm" onsubmit="event.preventDefault()">
+        <h1>Add Conctact Cards</h1>
+        <label for="name">Name:</label>
+        <input type="text" name="name"> <br><br>
+        <label for="num">Number:</label>
+        <input type="number" name="num"> <br><br>
+        <label for="mail">Email:</label>
+        <input type="email" name="mail"> <br><br>
+        <label for="">Enter image URL:</label>
+        <input type="text" name="img"> <br><br>
+        <button onclick="add()">Add Contact</button>
+    </form>
+    <div id="d1"><div id="di"></div></div>
+    <script>
+        var maindiv = document.getElementById('di')
+        var arr = [];
+        function add() {
+            var obj = {
+                'image': '',
+                'name': '',
+                'number': '',
+                'mail': ''
+            }
+            obj.image = userForm.img.value;
+            obj.name = userForm.name.value;
+            obj.number = userForm.num.value;
+            obj.mail = userForm.mail.value;
+            arr.push(obj)
+            console.log(arr);
+            card()
+           
+        }
+
+       function card(){
+        maindiv.innerHTML = ''
+        arr.forEach(function(a){
+            var div1 = document.createElement('div')
+            div1.setAttribute('id','d2')
+            maindiv.appendChild(div1)
+            var img = document.createElement('img');
+            img.src = a.image
+            img.style.width = '70px'
+            div1.appendChild(img)
+
+            var div = document.createElement('div');
+           var x = div.innerHTML ='Name :'+' '+ a.name;
+           div1.appendChild(div)
+            console.log(x)
+
+
+            var div = document.createElement('div');
+            div.innerHTML = 'Number :' + a.number;
+            div1.appendChild(div)
+
+            var div = document.createElement('div');
+            div.innerHTML ='Mail :' + a.mail;
+            div1.appendChild(div)
+
+        })
+       }
+        
+        
+    </script>
+</body>
+
+</html>

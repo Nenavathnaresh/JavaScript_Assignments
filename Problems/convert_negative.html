@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var arr = [1,4,-2,7,-4,8]
+        // var negArr = []
+        // function neg(a){
+        //     for(var i = 0; i < a.length; i++){
+        //         if(a[i] > 0){
+        //             negArr.push(-a[i])
+        //         }
+        //         else{
+        //             negArr.push(a[i])
+        //         }
+        //     }
+        //     return negArr ;
+        // }
+        // console.log(neg(arr))
+
+        var arr = [1,4,-2,7,-4,8];
+        var x = arr.map(function(a){
+            if(a > 0){
+                return -a ;
+            }
+            else{
+                return a
+            }
+        })
+        console.log(x)
+    </script>
+</body>
+</html>

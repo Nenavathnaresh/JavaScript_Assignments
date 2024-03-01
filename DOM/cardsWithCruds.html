@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+   
+  </style>
+</head>
+
+<body>
+  <h1>Add contact Cards with CRUD operations</h1>
+  <form name="contactCard" onsubmit="event.preventDefault()">
+    Name: <input type="text" name="name"><br><br>
+    number: <input type="text" name="number" id=""><br><br>
+    Email: <input type="email" name="mail" id=""><br><br>
+    Image URL: <input type="text" name="img" id=""><br><br>
+    <button onclick="add()">Add Contact</button><br><br>
+    <input type="text" name="search" id="" placeholder="search..." onkeyup="searchName(event)"><br><br>
+  </form>
+  
+  <div id="mainDiv"></div>
+
+  <script>
+    var arr = [];
+    function add() {
+      var obj = {
+        'name': '',
+        'number': '',
+        'mail': ''
+      }
+     // obj['img'] = contactCard.img.value;
+      obj['name'] = contactCard.name.value;
+      obj['number'] = contactCard.number.value;
+      obj['mail'] = contactCard.mail.value;
+      arr.push(obj)
+      console.log(arr);
+      createCard(arr)
+    }
+
+    mainDiv = document.getElementById('mainDiv')
+    function createCard(person){
+      mainDiv.style.border = '5px dashed blue';
+      mainDiv.style.backgroundColor = 'yellow';
+      mainDiv.style.width = '45%';
+      mainDiv.align = 'center';
+      mainDiv.innerHTML = ''
+      person.forEach((a)=>{
+        var div1 = document.createElement('div');
+        //div1.align =' center'
+        var img = document.createElement('img');
+        img.src = contactCard.img.value
+        img.style.width = '50px'
+        img.style.borderRadius = '250px'
+        div1.appendChild(img);
+        mainDiv.appendChild(div1)
+        // var btn = document.createElement('button');
+        // btn.innerHTML = 'X';
+        // btn.onclick = ()=>{
+        // var x = person.splice(a,1)
+        // }
+        // div1.appendChild(btn)
+
+        var div2 = document.createElement('div');
+        div2.style.borderBottom = '1px solid'
+        Object.keys(a).forEach((key)=>{
+          var inDiv1 = document.createElement('div');
+          inDiv1.innerHTML = key + ':'+ a[key];
+          div2.appendChild(inDiv1);
+          mainDiv.appendChild(div2)
+        })        
+      })
+    }
+
+    function searchName(e){
+      var x = arr.filter((a)=>{
+       return a['name'].toLowerCase().startsWith(contactCard.search.value.toLowerCase())
+      })
+      createCard(x)
+    //console.log(arr);
+    }
+  </script>
+</body>
+
+</html>

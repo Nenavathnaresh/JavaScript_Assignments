@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mainDiv{
+            border: 5px solid;
+            padding: 10px;
+            margin: 10px 300px;
+        }
+        #div1{
+            text-align: center;
+            background-color: burlywood;
+        }
+        #div2{
+            background-color: lawngreen;
+        }
+        button{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div id="div1">
+            <input type="text" name="input" id="input">
+            <button onclick="todo()">Add List</button><br><br>
+            <input type="radio" name="radio" value="all" onchange="checkList(event)" checked>All
+            <input type="radio" name="radio" value="complete" onchange="checkList(event)">Complete
+            <input type="radio" name="radio" value="incomplete" onchange="checkList(event)">Incomplete
+        </div>
+        <hr>
+        <div id="div2">
+            <ul id="li">
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        var ul = document.getElementById('li')
+        var arr = [];
+        var taskArr = [];
+
+        var input = document.getElementById('input');
+        var sts = input.value;
+        function todo() {
+            
+            console.log(arr);
+            
+
+            var obj = {
+                'task': input.value,
+                'status': 'incomplete'
+            }
+            taskArr.push(obj);
+            createList(taskArr)
+            console.log(taskArr);
+        }
+
+        function createList(arr1) {
+            ul.innerHTML = ''
+            arr1.forEach((a, b) => {
+
+                var li = document.createElement('li')
+                li.style.padding = '10px';
+                li.style.margin = '3px';
+                ul.appendChild(li)
+
+                var span = document.createElement('span');
+                li.appendChild(span);
+                span.innerHTML = a.task;
+
+
+                var delbtn = document.createElement('button');
+                delbtn.innerHTML = 'Delete';
+                li.appendChild(delbtn)
+                delbtn.style.display = 'none'
+                delbtn.onclick = function () {
+                    arr1.splice(b, 1)
+                    createList(taskArr)
+                }
+
+                var undobtn = document.createElement('button');
+                undobtn.innerHTML = 'Undo';
+                li.appendChild(undobtn)
+                undobtn.style.display = 'none'
+                undobtn.onclick = function () {
+                    span.style.textDecoration = 'solid'
+                    span.style.color = 'black';
+                    undobtn.style.display = 'none'
+                    delbtn.style.display = 'none'
+                    donebtn.style.display = 'inline'
+
+                    a['status'] = 'incomplete';
+                    console.log(taskArr);
+                }
+
+                var donebtn = document.createElement('button');
+                donebtn.innerHTML = 'Done';
+                li.appendChild(donebtn)
+                donebtn.onclick = function () {
+                    span.style.textDecoration = 'line-through';
+
+                    li.style.color = 'red';
+                    delbtn.style.display = 'inline'
+                    undobtn.style.display = 'inline'
+                    donebtn.style.display = 'none';
+
+                    a['status'] = 'complete';
+                    console.log(taskArr);
+
+                }
+                if(a.status === 'complete'){
+                    donebtn.onclick()
+                }
+            })
+
+        }
+
+
+
+        function checkList(e) {
+            var update = e.target.value
+            console.log(update);
+            var arr = taskArr.filter((a, b) => {
+                console.log(a);
+                return a['status'] === e.target.value;
+            })
+            if(e.target.value === 'all'){
+                arr = taskArr;
+            }
+            createList(arr);
+        }
+
+
+    </script>
+</body>
+
+</html>

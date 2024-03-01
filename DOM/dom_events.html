@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d2 {
+            border: 2px solid;
+            width: 300px;
+            height: 150px;
+            background-color: blueviolet;
+        }
+
+        #d3 {
+            border: 2px solid;
+            width: 300px;
+            height: 150px;
+            
+        }
+        #d5 {
+            border: 2px solid;
+            width: 300px;
+            height: 150px;
+            
+        }
+        #d9 {
+            border: 2px solid;
+            width: 300px;
+            height: 150px;
+            
+        }
+        #d10 {
+            border: 2px solid;
+            width: 300px;
+            height: 150px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="abc()">Add text</button>
+    <h1 id="d1"></h1>
+
+    <div id="d2"></div> <br>
+    <button onclick="red()">RED</button>
+    <button onclick="green()">GREEN</button>
+    <button onclick="yellow()">YELLOW</button>
+    <button onclick="blue()">BLUE</button> <br><br>
+
+    <button onclick="color(event)">White</button> <br><br>
+
+    <div id="d3" onclick="changecolor(event)"></div> <br><br>
+
+    <button onclick="boolean(event)" style="background-color: yellow;">Toggle</button> <span id="d4">false</span> <br><br>
+
+    <button onclick="on(event)">On</button> <br><br>
+
+    <div id="d5"><h1 id="d6">I am Different</h1></div> <br><br>
+    <button onclick="text(event)">true/false</button> <br><br>
+
+    <h1>Like and Dislike button</h1>
+    <button style="background-color: blueviolet; color: white;" onclick="like(event)">Like</button> <span id="d7">0</span><br><br>
+    <button style="background-color: red; color: white;" onclick="dislike(event)">Dislike</button> <span id="d8">0</span> <br><br>
+
+    <div id="d9"></div> <br>
+    <button onclick="xyz()">On</button>
+    <button onclick="mno()">Off</button> <br><br>
+
+    <div id="d10"></div> <br>
+    <button onclick="tog()">Toggle</button>
+
+    <script>
+        function abc() {
+            var x = document.getElementById('d1');
+            x.innerHTML = 'Wellcome to a different world!'
+        }
+
+        function red() {
+            var x = document.getElementById('d2');
+            x.style.backgroundColor = 'red'
+        }
+        function green() {
+            var x = document.getElementById('d2');
+            x.style.backgroundColor = 'green'
+        }
+        function yellow() {
+            var x = document.getElementById('d2');
+            x.style.backgroundColor = 'yellow'
+        }
+        function blue() {
+            var x = document.getElementById('d2');
+            x.style.backgroundColor = 'blue'
+        }
+
+        function color(e) {
+
+            if (e.target.style.backgroundColor === 'white') {
+                e.target.style.backgroundColor = 'green'
+                e.target.style.color = 'white'
+                e.target.innerHTML = 'Green'
+
+            }
+            else {
+                e.target.style.backgroundColor = 'white'
+                e.target.innerHTML = 'White'
+                e.target.style.color = 'black'
+            }
+
+        }
+
+        var x = document.getElementById('d3');
+        
+        var colors = ['red', 'green', 'blue', 'yellow', 'orange', 'violet', 'grey']
+        var i = 0;
+        x.style.backgroundColor = colors[i]
+        
+        function changecolor(e) {
+            e.target.style.backgroundColor = colors[i]
+            i++
+            if (i === colors.length) {
+                i = 0
+            }
+        }
+
+        
+        function boolean(e){
+            var span = document.getElementById('d4')
+            if(span.innerHTML === 'false'){
+                
+                span.innerHTML = true
+                span.style.color = 'red'
+            }
+            else{
+                span.innerHTML = false
+                span.style.color = 'red'
+            }
+        }
+
+        function on(e){
+            if(e.target.innerHTML === 'On'){
+                e.target.innerHTML = 'Off'
+            }
+            else{
+                e.target.innerHTML = 'On'
+            }
+            
+        }
+
+
+        var x = document.getElementById('d6');
+        function text(e){
+           if( x.innerHTML === 'true'){
+            x.innerHTML = 'false'
+           }
+           else{
+            x.innerHTML = 'true'
+           }
+        }
+
+        var li = document.getElementById('d7');
+        var dis = document.getElementById('d8')
+        var i = 1;
+        var j = 1;
+        function like(e){
+            li.innerHTML = i++
+        }
+        function dislike(e){
+            dis.innerHTML = j++
+        }
+
+       
+        function xyz(){
+            var div = document.getElementById('d9');
+            div.style.backgroundColor = 'yellow' ;
+        }
+        function mno(){
+            var div = document.getElementById('d9');
+            div.style.backgroundColor = 'white' ;
+        }
+
+        function tog(){
+            var di = document.getElementById('d10');
+            if(di.style.backgroundColor === 'white'){
+                di.style.backgroundColor = 'yellow'
+            }
+            else{
+                di.style.backgroundColor = 'white'
+            }
+        }
+    </script>
+</body>
+
+</html>

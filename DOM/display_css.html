@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(236, 163, 89);
+        }
+        #div1, #div2{
+            display: block;
+            background-color: blue;
+            margin: 10px;
+            padding: 10px;
+        }
+        .d1{
+            /* display: inline; */
+            background-color: red;
+            margin: 10px;
+            padding: 10px;
+        }
+        .r1{
+            background-color: cadetblue;
+            margin: 10px;
+            padding: 10px;
+        }
+        .r1:hover{
+            background-color: brown;
+        }
+        #maincontainer{
+            display: flex;
+            margin: 10px;
+            padding: 10px;
+            background-color: aqua;
+        }
+        #container{
+            width: 25%;
+        
+        }
+        #container1{
+            width: 70%;
+            margin: 10px;
+            padding: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+      
+    </style>
+</head>
+
+<body>
+    <h1>Different values of the display property</h1>
+    <div id="maincontainer">
+        <div id="container">
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('inline')"> display : inline ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('block')" >display : block ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('inline-block')">display : inline-block ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('flex')">display : flex ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('contents')">display : contents ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('inline-flex')">display : inline-flex ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('grid')">display : grid ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('inline-grid')">display : inline-grid ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('table')">display : table ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('inline-table')">display : inline-table ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('list-item')">display : list-item ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('none')">display : none ;
+            </div>
+            <div class='r1'>
+                <input type="radio" name="nradio" id="radio" onclick="display('run-in')">display : run-in ;
+            </div>
+        </div>
+        <div id="container1">
+            <div id="div1">
+                <div class="d1">text 1</div>
+                <div class="d1">text 2</div>
+                <div class="d1">text 3</div>
+            </div>
+            <div id="div2">
+                <div class="d1">text 1</div>
+                <div class="d1">text 2</div>
+                <div class="d1">text 3</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var div1 = document.getElementById('div1');
+        var div2 = document.getElementById('div2');
+        var d1 = document.querySelectorAll('div.d1')
+        console.dir(d1)
+        function display(value){
+             div1.style.display = value
+             div2.style.display = value
+            d1.forEach((a)=>{
+                a.style.display = value;
+            })
+        }
+    </script>
+</body>
+
+</html>

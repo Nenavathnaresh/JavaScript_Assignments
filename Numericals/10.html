@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar = [46,21,99,2,38,3];
+       
+        var x = ar.filter(function(a,b){
+            return b % 2 === 0
+        })
+        console.log(x);
+
+        var br = []
+        for(var i = 0; i < ar.length; i = i+2){
+            br.push(ar[i])
+        }
+        console.log(br);
+    </script>
+</body>
+</html>

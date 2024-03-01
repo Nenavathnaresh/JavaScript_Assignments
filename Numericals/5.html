@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar = ['apple','cat','girl','icecream','hi'];
+        var br = [];
+        ar.forEach(function(str){
+            br.push(str.length)
+        })
+        console.log(br)
+
+        var x = br.sort(function(a,b){
+            return a-b
+        })
+        console.log(x);
+
+      ar.sort(function(a,b){
+        if(a.length > b.length){
+            return 1;
+
+        }
+        if(a.length < b.length){
+            return -1
+        }
+        return 0
+      })
+      console.log(ar);
+    </script>
+</body>
+</html>

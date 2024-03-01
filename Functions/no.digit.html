@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var count = 0;
+        function digit(n){
+            for(var i = n ; n > 0; n = parseInt(n/10)){
+                count++
+            }
+            return count;
+        }
+        var noOfDigit = digit(1234574567);
+        console.log(noOfDigit)
+
+    </script>
+</body>
+</html>

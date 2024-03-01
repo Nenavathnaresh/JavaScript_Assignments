@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // function isAmst(num){
+        //     numStr = num.toString();
+        //     numDigit = numStr.length;
+
+        //     var sum = 0;
+        //     for(var i = 0; i < numDigit; i++){
+        //         var digit = parseInt(numStr[i]);
+        //         sum += digit ** numDigit;
+        //     }
+        //     return sum === num ;
+        // }
+        // console.log(isAmst(1634))
+
+
+        // var n = 1634;
+        // var x = n;
+        // var c = n;
+        // var count = 0;
+        // for(var i = n; n > 0; n = parseInt(n/10)){
+        //     count++
+        // }
+        // var sum = 0;
+        // for(var i = x; x > 0; x = parseInt(x/10)){
+        //     var digit = x % 10 ;
+        //     sum = sum + digit ** count ;
+        // }
+        // if(sum === c){
+        //     console.log('amstrong')
+        // }
+        // else{
+        //     console.log('not amstrong')
+        // }
+
+        function amstrong(n){
+            var x = n;
+            var v = n;
+            var count = 0;
+            var sum = 0;
+            for(var i = n; n > 0; n = parseInt(n/10)){
+                count++
+            }
+            for(var i = x; x > 0; x = parseInt(x/10)){
+                var digit = x % 10;
+                sum = sum + digit ** count ;
+            }
+            return sum === v ;
+        }
+
+        var k = amstrong(1634);
+        console.log(k)
+    </script>
+</body>
+</html>

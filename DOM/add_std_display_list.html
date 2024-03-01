@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #h1{
+            color: red;
+        }
+        #btn{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body align="center">
+    <h1 id="h1">Add Students</h1>
+    <input type="text" id="d1">
+    <button onclick="addStudent()" id="btn">Add Students</button>
+    <ul id="ul">
+
+    </ul>
+
+    <script>
+        var students = [];
+        var text = document.getElementById('d1');
+        var ul = document.getElementById('ul');
+
+
+        function addStudent(){
+            var li = document.createElement('li')
+            li.style.color = 'red'
+            ul.appendChild(li)
+            students.push(text.value)
+            li.innerHTML = text.value
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'Remove the single spaces from a given sentence';
+        var nof = str.split(' ');
+        console.log(nof.length);
+
+        var space = nof.join('');
+        console.log(space)
+
+        var reg = /Spaces/ig;
+        var x = str.search(reg);
+        console.log(x)
+
+        var t = 'Hello World';
+        var s = t.split(' ')
+        console.log(s)
+
+        var num = 'Q1STR5684A';
+        var text = ''
+        for(var i = 0; i < num.length; i++){
+            if(num[i] >= 'A' && num[i] <= 'z'){
+                text += num[i]
+            }
+        }
+        console.log(text)
+
+        var num = '4665';
+        var a = num.padStart(12,'X');
+        console.log(a)
+
+        var a = '81';
+        var b = '56';
+        console.log(a.padEnd(6,'X') + b.padStart());
+
+
+        var num = '9666654222';
+        console.log(num.padStart(13,'+91'))
+
+    </script>
+</body>
+</html>

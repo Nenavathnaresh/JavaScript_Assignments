@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1 {
+            color: red;
+        }
+
+        #btn {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body align=center>
+    <h1 class="c1">Show images using URL</h1>
+    <h3 class="c1">Enter image URL:</h3>
+    <input type="text" id="text"> <br><br>
+    <button id="btn" onclick="displayImg()">Add Image</button>
+    <div id="div"></div>
+
+    <script>
+        var arr = []
+        var div = document.getElementById('div')
+        var text = document.getElementById('text')
+        
+        function displayImg() {
+            var img = document.createElement('img');
+            img.style.width = '200px'
+            div.appendChild(img)
+            arr.push(text.value)
+            img.src = text.value;
+           
+        }
+    </script>
+</body>
+
+</html>

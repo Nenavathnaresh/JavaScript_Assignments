@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin-top: 20px;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border: none;
+            margin: 10px;
+            color: white;
+
+        }
+
+        button:hover {
+            box-shadow: 1px 2px 5px black;
+            transition: 0.5;
+        }
+
+        #d1 {
+            border: 2px solid;
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            background-color: lightblue;
+        }
+
+        #s5 {
+            color: red;
+        }
+
+        .t1 {
+            background-color: darksalmon;
+        }
+
+        .t2 {
+            background-color: darkorange;
+        }
+
+        .t3 {
+            background-color: green;
+        }
+
+        .t4 {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body align="center">
+    <div>
+        <div id="d1">
+            <h1>
+                <span id="s1"></span> <span id="s4"></span> <span id="s2"></span> <br><br>
+                <span id="s3"></span>
+            </h1>
+            <span id="s5"></span>
+        </div>
+        <button class='t1' onclick="score(0)">Zero</button>
+        <button class='t1' onclick="score(1)">One</button>
+        <button class='t1' onclick="score(2)">Two</button>
+        <button class='t1' onclick="score(3)">Three</button><br><br>
+        <button class='t2' onclick="score(4)">Four</button>
+        <button class='t1' onclick="score(5)">Five</button>
+        <button class='t3' onclick="score(6)">Six</button>
+        <button class='t4' onclick="wicket(1)">Wicket</button>
+    </div>
+  
+    <script>
+        var s1 = document.getElementById('s1');
+        var s2 = document.getElementById('s2');
+        var s4 = document.getElementById('s4');
+
+        var wkt = 0;
+        var sum = 0;
+        s2.innerHTML = wkt;
+        s1.innerHTML = sum;
+        s4.innerHTML = '/';
+
+        function score(runs) {
+            sum += runs;
+            s1.innerHTML = sum;
+        }
+
+        function wicket(w) {
+            wkt += w;
+            s2.innerHTML = wkt;
+            if (wkt === 10) {
+                document.getElementById('s3').innerHTML = 'Innings Over'
+                document.getElementById('s3').style.color = 'green'
+                s2.style.display = 'none'
+                s4.style.display = 'none'
+                document.getElementById('s5').innerHTML = `Target is ${sum + 1}`;
+                document.querySelectorAll('button').forEach((a) => {
+                    a.disabled = true;
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

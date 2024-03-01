@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar = ['hello','','hi','happy','','welcome']
+        var br = [];
+        ar.forEach(function(str){
+            if(str !== ''){
+                br.push(str)
+            } 
+        })
+        console.log(br);
+
+        //using filter
+        // use len>0
+
+        var x = ar.filter(function(str){
+            if(str !== ''){
+                return str
+            }
+        })
+        console.log(x);
+    </script>
+</body>
+</html>

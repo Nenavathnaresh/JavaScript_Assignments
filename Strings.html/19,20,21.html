@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 'If you try all the examples, you will learn a lot about JavaScript, in a very short time!'
+        var b = a.split(' ');
+        for(var i = 0; i < b.length; i++){
+            if(b[i] == 'you'){
+                var ind = i;
+                break;
+            }
+        }
+        console.log(b.slice(0,ind) + (b.slice(ind+1)))
+
+        for(var i = 0; i < b.length; i++){
+            if(b[i] == 'you'){
+                var ind = i;
+                
+            }
+        }
+        console.log(b.slice(0,ind) + (b.slice(ind+1)))
+
+        for(var i = 0; i < b.length; i++){
+            if(b[i] !== 'you'){
+                console.log(b[i])
+                
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar = [34,56,21,42,94]
+        var br = []
+        while(ar.length >= 2){
+            br.push(ar.splice(0,2))
+        }
+
+        if(ar.length === 1){
+            br.push([ar[0],0])
+        }
+        console.log(br);
+
+        //second method...
+
+        var a = [34,56,21,42,94];
+        var br = [];
+        if(a.length % 2 !== 0){
+            a.push(0);
+        }
+        for(var i = 0; i < a.length ; i += 2){
+            var cr = [];
+            cr.push(ar[i],ar[i+1]);
+            br.push(cr)
+        }
+        console.log(br);
+    </script>
+</body>
+</html>

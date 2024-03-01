@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body align="center">
+    <img id="img1" onclick="ktm(event)" src="https://m.media-amazon.com/images/I/714Wty8IvxL._AC_UF1000,1000_QL80_.jpg" alt="" width = 200px height="150px">
+    <img id="img2" onclick="ktm(event)" src="https://5.imimg.com/data5/JV/EK/MY-44176509/ktm-rc-390-power-bike.jpg" alt="" width = 200px height="150px">
+    <img id="img3" onclick="ktm(event)" src="https://m.media-amazon.com/images/I/710mLp2yoXL._AC_UF1000,1000_QL80_.jpg" alt="" width = 200px height="150px"> <br>
+
+    <img id="d1" src="https://5.imimg.com/data5/JV/EK/MY-44176509/ktm-rc-390-power-bike.jpg" alt="" width="350px" height="300px">
+    <script>
+        var imgsrc = document.getElementById('d1')
+        function ktm(e){
+           imgsrc.src = e.target.src
+        }
+    </script>
+</body>
+</html>

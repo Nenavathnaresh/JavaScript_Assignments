@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var str = prompt();
+        // for(var i = 0; i < str.length; i++){
+        //     var len = str.split(str[i]).length-1;
+        //     if(len === 1){
+        //         ind = i;
+        //         break;
+        //     }
+        // }
+        // if(len === 1){
+        //     console.log(ind)
+        // }
+        // else{
+        //     console.log(-1)
+        // }
+
+        var str = prompt();
+        var c = 0;
+        for(var i = 0; i < str.length ; i++){
+            for(var j = 0; j < str.length; j++){
+                if(str[i] === str[j]){
+                    
+                    c++;
+                }
+            }
+            if(c === 1){
+                console.log(i);
+                break;
+            }
+            else if(i == str.length-1 && c > 0){
+                console.log(-1)
+            }
+           c = 0; 
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="d1"></ul>
+
+    <script>
+        var students = [
+            {
+                name: 'jaya',
+                gender: 'female',
+                place: 'gachibowli',
+            },
+            {
+                name: 'dasu',
+                gender: 'male',
+                place: 'kphb'
+            },
+            {
+                name: 'swati',
+                gender: 'female',
+                place: 'pune'
+            },
+            {
+                name: 'pallavi',
+                gender: 'female',
+                place: 'assam'
+            },
+            {
+                name: 'kiran',
+                gender: 'male',
+                place: 'kondapur'
+            },
+            {
+                name: 'thirumala',
+                gender: 'male',
+                place: 'madhapur'
+            },
+            {
+                name: 'priya',
+                gender: 'female',
+                place: 'hitech'
+            },
+        ]
+            var ul = document.getElementById('d1');
+        students.forEach(function(a){
+            var li = document.createElement('li');
+            li.innerHTML = a.name
+            var nesul = document.createElement('ul');
+            var li1 = document.createElement('li');
+            li1.innerHTML = a.gender;
+            if(a.gender === 'female'){
+                li.style.backgroundColor = 'pink'
+            }
+            else{
+                li.style.backgroundColor = 'blue'
+                li.style.color = 'white'
+            }
+            li.appendChild(nesul)
+            nesul.appendChild(li1)
+           var li2 = document.createElement('li');
+            li2.innerHTML = a.place ;
+            nesul.appendChild(li2)
+            ul.appendChild(li)
+
+           
+        })
+        
+        if(a.gender === 'female'){
+            
+        }
+    
+
+
+    </script>
+</body>
+
+</html>

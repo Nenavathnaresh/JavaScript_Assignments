@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var fruit = 'apple';
+        // var ar = []
+        // var fruitLetter = {};
+        // var letters = fruit.split('');
+        // letters.forEach(function(a){
+        //     if(!ar.includes(a)){
+        //         ar.push(a);
+        //     }
+        // })
+        // ar.forEach(function(a){
+        //     fruitLetter[a] = 0;
+        // })
+        // for(var x in fruitLetter){
+        //     letters.forEach(function(a){
+        //         if(x === a){
+        //             fruitLetter[x]++;
+        //         }
+        //     })
+        // }
+        // console.log(fruitLetter);
+
+        var x = 'naresh'; 
+        var obj = {};
+        for(var i=0; i<x.length;i++){
+            if(Object.keys(obj).includes(x[i])){
+                obj[x[i]]++
+            }
+            else{
+                obj[x[i]] = 1
+            }
+        }
+        console.log(obj);
+
+        var bool = false
+        for(var x in obj){
+            if(obj[x] > 1){
+                bool = true
+            }
+           
+        }
+        console.log(bool);
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function lcm(n1,n2){
+        var small;
+        var large;
+        if(n1>n2){
+            large = n1;
+            small = n2;
+        }
+        else{
+            large = n2;
+            small = n1;
+        }
+        var i = large;
+        while(large % small !== 0){
+            large += i
+        }
+        return large 
+    }
+    console.log(lcm(10,8))
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dd{
+            border: 2px solid blue;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            background-color: yellow;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+    <div id="dd"><h2>Total: <span id="spn"></span></h2></div>
+    <script>
+        var products = [
+            {
+                'price' : 4000,
+                'count' : 1
+            },
+            {
+                'price' : 2000,
+                'count' : 1
+            },
+            {
+                'price' : 3000,
+                'count' : 1
+            },
+            {
+                'price' : 6000,
+                'count' : 1
+            },
+            {
+                'price' : 1000,
+                'count' : 1
+            }
+            
+        ]
+
+        var mainDiv = document.getElementById('div')
+        var spn = document.getElementById('spn')
+        
+       function createCart(arr){
+        mainDiv.innerHTML = ''
+        arr.forEach(function(a,b){
+            var div = document.createElement('div');
+            mainDiv.appendChild(div)
+            div.style.border = '2px solid red'
+            div.style.borderRadius = '5px'
+            div.style.alignContent = 'center'
+            
+            div.style.padding = '10px'
+            div.style.margin = '10px'
+            div.style.backgroundColor = 'lightgreen'
+
+            var span = document.createElement('span');
+            span.innerHTML = a.price
+            div.appendChild(span);
+
+            var btn1 = document.createElement('button')
+            btn1.innerHTML = '-';
+            btn1.onclick = function(){
+                products[b].count--
+                createCart(products)
+               // totaSum()
+            }
+            btn1.style.marginLeft = '75%'
+            div.appendChild(btn1)
+
+            var inp = document.createElement('input')
+            inp.value = a['count']
+            inp.style.textAlign = 'center';
+            div.appendChild(inp)
+
+            var btn2 = document.createElement('button')
+            btn2.innerHTML = '+'
+            btn2.onclick = function(){
+                products[b].count++;
+                createCart(products)
+                //totaSum()
+            }
+            div.appendChild(btn2);
+
+            var delbtn = document.createElement('button');
+            delbtn.innerHTML = 'Delete'
+            delbtn.style.marginLeft = '10px'
+            div.appendChild(delbtn);
+            delbtn.onclick = function(){
+                arr.splice(b,1);
+                createCart(products)
+            }
+           
+        })
+        totaSum()
+
+       }
+       function totaSum(){
+        var x = products.reduce(function(a,b){
+            return a + b['price'] * b['count']
+        },0)
+        spn.innerHTML = x
+       }
+       createCart(products)
+    </script>
+</body>
+</html>

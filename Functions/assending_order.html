@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sortNums(a, b, c) {
+            if (a < b && a < c) {
+                if (b < c) {
+                    return (a + "," + b + "," + c)
+                }
+                else {
+                    return (a + "," + c + "," + b)
+                }
+            }
+            else if (b < a && b < c) {
+                if (a < c) {
+                    return (b +"," + a + "," + c)
+                }
+                else {
+                    return (b +"," + c + "," + a)
+                }
+            }
+            else {
+                if (a < b) {
+                    return (c +"," + a + "," + b)
+                }
+                else {
+                    return (c +"," + b + "," + a)
+                }
+            }
+        }
+
+         var k = sortNums(2,7,3);
+         console.log(k)
+
+        // function sortNums(a,b,c){
+        //     var arr = [a,b,c];
+        //     arr.sort(function(x,y){
+        //         return x - y ;
+        //     });
+        //     return arr
+        // }
+    </script>
+</body>
+
+</html>

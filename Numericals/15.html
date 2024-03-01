@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var min = Infinity
+      var ar = [3,13,26,24,9,18,2];
+      for(var i = 0; i < ar.length; i++){
+        if(ar[i]%3 === 0){
+            if(ar[i] < min){
+                min = ar[i]
+            }
+        }
+      }
+      console.log(min);
+
+      var min = Infinity;
+      var x = ar.filter(function(n){
+        if(n %3===0){
+            if(min > n){
+                min = n
+            }
+        }
+        return min
+      })
+      console.log(min);
+    </script>
+</body>
+</html>

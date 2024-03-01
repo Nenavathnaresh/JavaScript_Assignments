@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"  onkeyup="text(event)">
+    <h1 id="d2"></h1>
+
+    <script>
+        var h1 = document.getElementById('d2');
+        function text(e){
+            h1.innerHTML = e.target.value;
+        }
+
+
+    </script>
+</body>
+</html>

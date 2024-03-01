@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = 'naresh';
+        var s = 'Suresh';
+        var c = 'Chandu';
+        var d = 'Dholi';
+        var sh = 'shy';
+        console.log(n,s,c,d,sh)
+
+
+        
+        var n = 'Naresh';
+        var s = 'Suresh';
+        var c = 'Chandu';
+        var d = 'Dholi';
+        var sh = 'Shy';
+        console.log(n[0],s[0],c[0],d[0],sh[0]);
+        console.log(n.at(0),s.at(0),c.at(0),d.at(0),sh.at(0));
+        console.log(n.charAt(0),s.charAt(0),c.charAt(0),d.charAt(0),sh.charAt(0));
+
+        var n = 'Naresh';
+        var s = 'Suresh';
+        var c = 'Chandu';
+        var d = 'Dholi';
+        var sh = 'Shy';
+        console.log(n[n.length-1],s[s.length-1],c[c.length-1],d[d.length-1],sh[sh.length-1]);
+        console.log(n.at(n.length-1),s.at(s.length-1),c.at(c.length-1),d.at(d.length-1),sh.at(sh.length-1))
+        console.log(n.charAt(n.length-1),s.charAt(s.length-1),c.charAt(c.length-1),d.charAt(d.length-1),sh.charAt(sh.length-1))
+
+        var n = 'I am Nenavath Naresh';
+        console.log(n.length)
+
+        var n = 'I am Nenavath Naresh';
+        for(var i = 0; i < n.length; i++){
+            console.log(n[i])
+        }
+
+        var n = 'I am Nenavath Naresh';
+        for(var i = 0; i < n.length; i++){
+            if(i%2 == 0){
+                console.log(n[i])
+            }
+        }
+        console.log('')
+
+
+        var n = 'Naresh';
+        for(var i = n.length-1; i >= 0; i--){
+            console.log(n[i])
+        }
+        console.log('')
+        
+
+        var str = 'Edupoly';
+        for(i = 0; i < str.length; i++){
+            if(str[i] == 'p'){
+                console.log(true)
+            }
+        }
+        console.log('')
+        
+        var str = 'Edupoly';
+        for(var i = 0; i < str.length; i++){
+            if(str[i] === 'p'){
+                console.log(i)
+            }
+        }
+        console.log(str.indexOf('p'))
+        console.log('')
+
+        console.log(n+s);
+        console.log(n.concat(s))
+        console.log('');
+
+        var text = '';
+        for(i = 0; i < str.length; i++){
+            text += str[i];
+
+        }
+        console.log(text);
+
+        var m = 'madam';
+        var rev = ''
+        for(var i = m.length-1; i >= 0; i--){
+            rev += m[i];
+        }
+        console.log(rev);
+        if(rev === m){
+            console.log('It is a polindrome')
+        }
+        else{
+            console.log("Not a polindrome")
+        }
+       
+
+    </script>
+</body>
+</html>

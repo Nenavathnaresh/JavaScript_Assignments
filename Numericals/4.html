@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="d1">
+    <input type="text" id="d2">
+    <button onclick="pair()">Pair</button>
+    <script>
+        var text1 = document.getElementById('d1');
+        var text2 = document.getElementById('d2');
+        var br = []
+        function pair(){
+            if(text1.value === ''){
+                text1.value = 0
+            }
+            if(text2.value === ''){
+                text2.value = 0
+            }
+            br.push(Number(text1.value))
+            br.push(Number(text2.value))
+            console.log(br)
+        }
+
+       
+    </script>
+</body>
+</html>

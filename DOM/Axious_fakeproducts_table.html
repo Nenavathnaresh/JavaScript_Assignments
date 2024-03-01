@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <table border="1px">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Title</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody id="tb">
+
+    </tbody>
+  </table>
+  <script>
+    var arr = [];
+    axios.get('https://fakestoreapi.com/products').then(function(res){
+          console.log(res.data)
+          arr = res.data;
+          console.log(arr[0])
+          crateTable(arr)
+    })
+
+    var table = document.getElementById('tb')
+    function crateTable(products){
+      products.forEach((product) => {
+        var tr = document.createElement('tr');
+
+        var td1 = document.createElement('td');
+        td1.innerHTML = product.id;
+        var td2 = document.createElement('td');
+        td2.innerHTML = product.category;
+        var td3 = document.createElement('td');
+        td3.innerHTML = product.price;
+        var td4 = document.createElement('td');
+        td4.innerHTML = product.rating.rate;
+        var td5 = document.createElement('td');
+        td5.innerHTML = product.title;
+        var td6 = document.createElement('td');
+        var image = document.createElement('img')
+        image.src = product.image;
+        image.style.width = '150px'
+        td6.appendChild(image);
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tr.appendChild(td5);
+        tr.appendChild(td6);
+
+        table.appendChild(tr)
+
+      })
+    }
+    createTable(arr)
+  </script>
+</body>
+</html>

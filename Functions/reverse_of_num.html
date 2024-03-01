@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sum = 0;
+        function rev(a){
+            for(var i = a; a > 0; a = parseInt(a/10)){
+                var digit = a % 10;
+                sum = sum * 10 + digit;
+            }
+            return sum;
+        }
+        var reverse = rev(12345);
+        console.log(reverse)
+    </script>
+</body>
+</html>

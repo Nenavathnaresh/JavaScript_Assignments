@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="d1"></ol>
+    <button onclick="asc()">Assending</button>
+    <button onclick="dsc()">dessending</button>
+    <script>
+    
+        var arr = ['Naresh','Suresh','Shyama','Dholi','Chandu'];
+        var x = document.getElementById('d1')
+        arr.forEach(function(a){
+            var li = document.createElement('li');
+            li.innerHTML = a;
+            x.appendChild(li)
+
+        })
+
+        function asc(){
+            arr.sort(function(a,b){
+                if(a>b){return 1}
+                else{return -1}
+            })
+            x.innerHTML = ''
+            arr.forEach(function(a){
+            var li = document.createElement('li');
+            li.innerHTML = a;
+            x.appendChild(li)
+
+        })
+        }
+
+        function dsc(){
+            arr.sort(function(a,b){
+                if(a>b){return -1}
+                else{return 1}
+            })
+            x.innerHTML = ''
+            arr.forEach(function(a){
+            var li = document.createElement('li');
+            li.innerHTML = a;
+            x.appendChild(li)
+
+        })
+        }
+       
+    </script>
+</body>
+</html>

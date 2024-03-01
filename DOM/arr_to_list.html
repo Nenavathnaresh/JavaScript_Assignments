@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1">
+
+    </div>
+    <div id="d2"></div>
+   <script>
+    var arr = ['naresh','suresh', 'ramesh','paramesh','mahesh'];
+    var ul = document.createElement('ul')
+    var x = arr.forEach(function(a){
+       
+        var li = document.createElement('li');
+        li.innerHTML = a ;
+        ul.appendChild(li);
+        
+    })
+    console.log(ul)
+    var x = document.getElementById('d1');
+    x.appendChild(ul)
+
+    //Take an array of numbers and create a list from it
+
+    var brr = [11,22,33,44,55,66,77];
+    var ul = document.createElement('ul');
+    brr.forEach(function(a){
+        var li = document.createElement('li')
+        li.innerHTML = a ;
+        ul.appendChild(li)
+    })
+    var x = document.getElementById('d2');
+    x.appendChild(ul)
+   </script>
+</body>
+</html>

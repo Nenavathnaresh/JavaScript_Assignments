@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function facto(n){
+            var fc = 1;
+            for(var i = 1; i <= n; i++){
+                fc *= i;
+            }
+            return fc
+        }
+        var fact = facto(5);
+        console.log(fact)
+
+        function rev(a){
+            var d = 0;
+            for(i = a; a > 0; a = parseInt(a/10)){
+                digit = a % 10;
+                d = d * 10 + digit;
+
+            }
+            return d
+        }
+        var reverse = rev(12345);
+        console.log(reverse)
+    </script>
+</body>
+</html>
