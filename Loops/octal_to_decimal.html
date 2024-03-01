@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = +prompt();
+        var sum = 0;
+        var i = 0 ;
+        while(n > 0){
+            var rem = n % 10 ;
+            sum = sum + rem *(8**i) ;
+            n = parseInt(n/10);
+            i++
+        }
+        console.log(sum)
+    </script>
+</body>
+</html>

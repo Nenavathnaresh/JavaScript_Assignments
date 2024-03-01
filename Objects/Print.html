@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person= {
+            'firstName' : 'Naresh',
+            'lastName' : 'Nenavath',
+            'age' : 22,
+            'gender' : 'male',
+            'skill' : 'ReactJS',
+            'expertise' : 'Beginner'
+        };
+        console.log(person.firstName);
+        console.log(person.lastName);
+        console.log(person.firstName + ' ' + person.lastName);
+        if(person.age < 18){
+            console.log(false)
+        }
+        else{
+            console.log(true)
+        }
+        console.log('')
+        console.log('')
+        console.log('')
+
+        var marks = {
+            maths : 34,
+            english : 56,
+            science : 32,
+            hindi : 75,
+            'social science' : 65 
+        };
+        for(var i in marks)
+        {
+            console.log(marks[i])
+            
+            
+        }
+        console.log('')
+
+
+        for(var i in marks)
+        {
+            console.log(i)
+        }
+        console.log('')
+
+        var count=0;
+        for(var i in marks)
+        {
+            count += 1
+            
+        }
+        console.log(count);
+        console.log('')
+        var sum = 0;
+        for(var i in marks){
+            sum += marks[i];
+        }
+        var persent = sum / 500 * (100);
+        console.log(persent);
+
+        console.log('')
+        for(var i in marks){
+           if(marks[i] > 35){
+            console.log(i)
+           }
+        }
+
+        console.log('')
+        for(var i in marks){
+           if(marks[i] > 35){
+            console.log(i,'pass')
+           }
+           else{
+            console.log(i,'fail')
+           }
+        }
+        console.log('')
+        for(var i in marks){
+            if(marks[i] > 35){
+                console.log(i)
+            }
+            
+        }
+        console.log('')
+
+
+        count = 0;
+        for(var i in marks){
+            if(marks[i] > 35){
+                count += 1;
+            }
+        }
+        console.log(count);
+        console.log('');
+
+        for(var i in marks){
+            if(marks[i] < 35){
+                console.log(i)
+            }
+        }
+        console.log('')
+
+        count = 0;
+        for(var i in marks){
+            if(marks[i] < 35){
+                count += 1;
+            }
+        }
+        console.log(count)
+        console.log('')
+
+        var min = marks['maths'];
+        for(var i in marks){
+            if(marks[i] < min){
+                min = marks[i];
+            }
+        }
+        console.log(min);
+        console.log('');
+
+        var max = marks['maths'];
+        for(var i in marks){
+            if(marks[i] > max){
+                max = marks[i];
+            }
+        }
+        console.log(max);
+        console.log('');
+
+        for(var i in marks){
+            if(marks[i] > 35){
+                console.log(i, 'passed')
+            }
+            else{
+                console.log(i, 'fail')
+            }
+        }
+        console.log('');
+
+        var sub = prompt();
+        //for(var i in marks){
+            if(marks[sub] > 35){
+                console.log(marks[sub], 'pass')
+            }
+            else{
+                console.log(marks[sub], 'fail')
+            }
+        //}
+
+
+
+         
+         var s = 'passed' ;
+         for(var x in marks){
+            if(marks[x] < 35){
+                s = 'fail';
+                break;
+            }
+         }
+         console.log(s)
+
+
+         
+    </script>
+</body>
+</html>

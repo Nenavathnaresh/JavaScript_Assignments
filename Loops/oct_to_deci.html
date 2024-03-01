@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = prompt();
+        sum = 0 ;
+        var len = n.length ;
+        for(var i = 0; i <= len; i++ ){
+            pow = 8 ** i ;
+            var rem = n % 10 ;
+            var dec = rem * pow ;
+            sum += dec ;
+            n = parseInt(n/10) ;
+
+        }
+        console.log(sum);
+    </script>
+</body>
+</html>

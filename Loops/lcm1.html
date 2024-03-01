@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n1 = +prompt();
+        var n2 = +prompt();
+        var greater ;
+        var smaller ;
+
+        if(n1 > n2){
+            greater = n1;
+            smaller = n2;
+        }
+        else{
+            greater = n2;
+            smaller = n1;
+        }
+        var i = greater;
+        while(greater % smaller !==0){
+            greater = greater + i;
+        }
+        console.log(greater);
+    </script>
+</body>
+</html>

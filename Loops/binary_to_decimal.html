@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = +prompt();
+        var sum = 0 ;
+        var i = 0;
+        while(n > 0){
+            rem = n % 10;
+            sum = sum + rem * (2**i);
+            n = parseInt(n/10);
+            i++ ;
+        }
+        console.log(sum);
+    </script>
+</body>
+</html>

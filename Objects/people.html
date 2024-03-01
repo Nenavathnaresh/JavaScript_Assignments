@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var people = [
+            {
+                "firstname": "praveen",
+                "lastname": "gubbala",
+                "age": 36,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 10000
+            },
+            {
+                "firstname": "srikanth",
+                "lastname": "gubbala",
+                "age": 32,
+                "gender": "male",
+                "city": "bengaluru",
+                "salary": 20000
+            },
+            {
+                "firstname": "pradeep",
+                "lastname": "reddy",
+                "age": 21,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 25000
+            },
+            {
+                "firstname": "mounika",
+                "lastname": "mudiraj",
+                "age": 20,
+                "gender": "female",
+                "city": "nalgonda",
+                "salary": 30000
+            },
+            {
+                "firstname": "nikhil",
+                "lastname": "m",
+                "age": 22,
+                "gender": "male",
+                "city": "guntur",
+                "salary": 2000
+            },
+            {
+                "firstname": "riya",
+                "lastname": "bhadouria",
+                "age": 14,
+                "gender": "female",
+                "city": "indore",
+                "salary": 40000
+            }
+        ];
+            for(var a =0; a < people.length; a++){
+                console.log(people[a].firstname)
+            }
+            console.log('')
+
+
+            for(var b = 0; b < people.length; b++){
+                console.log(people[b].firstname +' '+ people[b].lastname)
+            }
+            console.log('')
+
+
+            for(var c =0; c < people.length; c++){
+                if(people[c].age > 25){
+                    console.log(people[c].firstname)
+                }
+            }
+            console.log('')
+
+
+            for(d = 0; d < people.length; d++){
+                if(people[d].gender == 'female'){
+                    console.log(people[d].firstname)
+                }
+            }
+            console.log('')
+
+
+            for(e = 0; e < people.length; e++){
+                if(people[e].salary > 25000){
+                    console.log(people[e].firstname)
+                }
+
+            }
+            console.log('')
+
+            var cit =' hyd';
+            for(f = 0; f < people.length; f++){
+                if(people[f].city == cit){
+                    console.log(people[f].firstname)
+                }
+            }
+            console.log('')
+
+
+            var totalSalary = 0;
+            for(g = 0; g < people.length; g++){
+                totalSalary += people[g].salary ;
+            }
+            console.log(totalSalary);
+            console.log('');
+
+            for(h = 0; h < people.length; h++){
+                if(people[h].gender == 'female'){
+                    console.log(people[h].firstname)
+                }
+            }
+            console.log('')
+
+
+            for(i = 0; i < people.length; i++){
+                if(people[i].salary > 25000){
+                    console.log(people[i].firstname)
+                }
+            }
+            console.log('');
+
+            
+      
+            console.log('');
+
+
+            for(var i = 0; i < people.length; i++){
+                people.sort(function(a,b){
+                    return (a.age) - (b.age)
+                })
+            
+            console.log(people[i].firstname,people[i].lastname);
+            }
+            console.log('')
+
+            for(var i = 0; i < people.length; i++){
+            people.sort(function(a,b){
+                if(a.firstname > b.firstname){
+                    return 1
+                }
+                else{
+                    return -1
+                }
+            })
+            console.log(people[i].firstname,people[i].lastname)
+            }
+            console.log('')
+
+
+            for(var i = 0; i < people.length; i++){
+            people.sort(function(a,b){
+                if(a.firstname < b.firstname){
+                    return 1
+                }
+                else{
+                    return -1
+                }
+            })
+            console.log(people[i].firstname,people[i].lastname)
+            }
+            console.log('')
+
+
+            for(var i = 0; i < people.length; i++){
+            people.sort(function(a,b){
+                return b.salary - a.salary
+            })
+            console.log(people[i].firstname, people[i].lastname)
+            }
+            console.log('')
+
+            for(var n = 0; n < people.length; n++){
+                if(people[n].gender == 'male'){
+                    if(people[n].age > 25){
+                        console.log(people[n].firstname)
+                    }
+                }
+            }
+    </script>
+</body>
+
+</html>
